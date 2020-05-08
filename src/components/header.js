@@ -1,42 +1,56 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import "@blueprintjs/core/lib/css/blueprint.css"
+import { Navbar, Nav } from "react-bootstrap"
+import styled from "@emotion/styled"
+import { css } from "@emotion/core"
+
+const NavLink = styled(Link)`
+  font-family: "Rubik", sans-serif;
+  font-size: small;
+
+  &active-style {
+    color: black;
+  }
+`
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
+  <Navbar
+    bg="primary"
+    expand="lg"
+    fixed="top"
+    css={css`
+      background-color: red;
+      @media screen and (min-width: 1024px) {
+        padding: 0.5rem calc((100vw - 960px) / 2);
+      }
+    `}
+    variant="dark"
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+    <Navbar.Brand href="#home">Andrew Ndhlovu</Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="ml-auto">
+        <NavLink className="nav-link" activeClassName="active-style" to="/">
+          Home
+        </NavLink>
+        <NavLink
+          className="nav-link"
+          activeClassName="active-style"
+          to="/page-2"
         >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+          About
+        </NavLink>
+        <NavLink
+          className="nav-link"
+          activeClassName="active-style"
+          to="/portfolio"
+        >
+          Portfolio
+        </NavLink>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

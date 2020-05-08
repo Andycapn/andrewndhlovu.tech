@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Padauk&family=Rubik:wght@500&display=swap');
+
+// change the theme
+$theme-colors: (
+        "primary": #45409C,
+        "danger": #ff4136,
+        "secondary": #F7803E,
+);
+
+$font-family-sans-serif: 'Padauk', sans-serif;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
