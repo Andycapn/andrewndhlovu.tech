@@ -17,6 +17,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sass`,
+    `gatsby-background-image`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

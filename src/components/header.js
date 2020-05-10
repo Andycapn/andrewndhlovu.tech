@@ -24,11 +24,22 @@ const Header = ({ siteTitle }) => (
       @media screen and (min-width: 1024px) {
         padding: 0.5rem calc((100vw - 960px) / 2);
       }
+      @media screen and (min-width: 1440px) {
+        padding: 0.5rem calc((100vw - 1300px) / 2);
+      }
     `}
-    variant="dark"
+    variant="light"
   >
-    <Navbar.Brand href="#home">Andrew Ndhlovu</Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Brand href="/" style={{ fontFamily: '"Rubik", sans-serif' }}>
+      Andrew Ndhlovu
+    </Navbar.Brand>
+    <Navbar.Toggle
+      aria-controls="basic-navbar-nav"
+      css={css`
+        color: black;
+        border: none;
+      `}
+    />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
         <NavLink className="nav-link" activeClassName="active-style" to="/">

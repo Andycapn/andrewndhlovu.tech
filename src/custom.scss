@@ -2,12 +2,15 @@
 
 // change the theme
 $theme-colors: (
-        "primary": #45409C,
+        "primary": whitesmoke,
         "danger": #ff4136,
         "secondary": #F7803E,
 );
 
 $font-family-sans-serif: 'Padauk', sans-serif;
+p{
+  word-spacing: -1px;
+}
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
