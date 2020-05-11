@@ -16,11 +16,10 @@ const NavLink = styled(Link)`
 
 const Header = ({ siteTitle }) => (
   <Navbar
-    bg="primary"
+    bg="nav-bar"
     expand="lg"
     fixed="top"
     css={css`
-      background-color: red;
       @media screen and (min-width: 1024px) {
         padding: 0.5rem calc((100vw - 960px) / 2);
       }
@@ -41,7 +40,7 @@ const Header = ({ siteTitle }) => (
       `}
     />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="ml-auto">
+      <Nav className="ml-auto" variant="pills">
         <NavLink className="nav-link" activeClassName="active-style" to="/">
           Home
         </NavLink>

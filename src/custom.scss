@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Padauk&family=Rubik:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 // change the theme
 $theme-colors: (
         "primary": whitesmoke,
         "danger": #ff4136,
         "secondary": #F7803E,
+        "nav-bar": #c2c2c2,
 );
 
-$font-family-sans-serif: 'Padauk', sans-serif;
+$font-family-sans-serif: 'Source Code Pro', monospace;
 p{
   word-spacing: -1px;
 }
