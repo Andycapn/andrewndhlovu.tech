@@ -1,15 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Padauk&family=Rubik:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Padauk&family=Rubik:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 // change the theme
 $theme-colors: (
-        "primary": whitesmoke,
+        "bg-primary": #6c8dfa,
         "danger": #ff4136,
         "secondary": #F7803E,
-        "nav-bar": #c2c2c2,
+        "secondary1": #F7803E,
+        "nav-bar": #6c8dfa,
+        "nav-link-color": white,
+        "overlay": rgba(108, 141, 250, 0.2),
 );
 
-$font-family-sans-serif: 'Source Code Pro', monospace;
+$navbar-dark-color: #f2f2f2;
+$navbar-dark-hover-color: #4f4f4f;
+
+
+$font-family-sans-serif: 'Rubik', sans-serif;
 p{
   word-spacing: -1px;
 }

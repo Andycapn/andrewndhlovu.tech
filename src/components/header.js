@@ -8,13 +8,14 @@ import { css } from "@emotion/core"
 const NavLink = styled(Link)`
   font-family: "Rubik", sans-serif;
   font-size: small;
+  color: aliceblue;
 
   &active-style {
     color: black;
   }
 `
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <Navbar
     bg="nav-bar"
     expand="lg"
@@ -27,11 +28,15 @@ const Header = ({ siteTitle }) => (
         padding: 0.5rem calc((100vw - 1300px) / 2);
       }
     `}
-    variant="light"
+    variant="dark"
   >
-    <Navbar.Brand href="/" style={{ fontFamily: '"Rubik", sans-serif' }}>
+    <Link
+      to="/"
+      style={{ fontFamily: '"Josefin Sans", sans-serif' }}
+      className="navbar-brand"
+    >
       Andrew Ndhlovu
-    </Navbar.Brand>
+    </Link>
     <Navbar.Toggle
       aria-controls="basic-navbar-nav"
       css={css`
@@ -41,22 +46,26 @@ const Header = ({ siteTitle }) => (
     />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto" variant="pills">
-        <NavLink className="nav-link" activeClassName="active-style" to="/">
-          Home
-        </NavLink>
-        <NavLink
-          className="nav-link"
-          activeClassName="active-style"
-          to="/page-2"
-        >
-          About
-        </NavLink>
         <NavLink
           className="nav-link"
           activeClassName="active-style"
           to="/portfolio"
         >
           Portfolio
+        </NavLink>
+        <NavLink
+          className="nav-link"
+          activeClassName="active-style"
+          to="/contact"
+        >
+          Contact Me
+        </NavLink>
+        <NavLink
+          className="nav-link"
+          activeClassName="active-style"
+          to="/about"
+        >
+          About
         </NavLink>
       </Nav>
     </Navbar.Collapse>
