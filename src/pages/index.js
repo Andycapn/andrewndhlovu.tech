@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import "../custom.scss"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
-import { Power4, Power3, TimelineLite } from "gsap"
+import { Power3, TimelineLite } from "gsap"
 import BackgroundImage from "gatsby-background-image"
 
 const ImageBackground = styled(BackgroundImage)`

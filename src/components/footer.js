@@ -2,6 +2,8 @@ import * as React from "react"
 import styled from "@emotion/styled"
 
 const FooterElement = styled.footer`
+  position: relative;
+  bottom: 0;
   background-color: #61f4de;
   @media screen and (min-width: 1440px) {
     padding: 0.5rem calc((100vw - 1300px) / 2);

@@ -10,7 +10,7 @@ export const projectsArray = [
       "A website for a local marketing agency. I built this project using GatsbyJS an SSR that's built on top of the ReactJS library.",
     img: nkobaProj,
     githubLink: "https://github.com/Andycapn/nkoba-digital",
-    demoLink: "https://nkoba-digital.netlify.app",
+    demoLink: "https://nkoba.demo.andrewndhlovu.tech",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const projectsArray = [
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut esse labore magni quidem repudiandae rerum sed, soluta vero! Cumque, suscipit.",
     img: todoProj,
     githubLink: "https://github.com/Andycapn/React-Todo",
-    demoLink: "https://sad-almeida-cb9274.netlify.app",
+    demoLink: "https://todo.demo.andrewndhlovu.tech",
   },
   {
     id: 3,
