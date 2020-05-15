@@ -13,7 +13,7 @@ const ImageBackground = styled(BackgroundImage)`
 // Page Elements
 
 const MainDiv = styled.main`
-  padding: 5vh calc((100vw - 360px) / 2) 0.5rem;
+  padding: 5vh calc((100vw - 345px) / 2) 0.5rem;
   @media screen and (min-width: 1024px) {
     padding: 0.5rem calc((100vw - 960px) / 2);
   }
@@ -41,6 +41,10 @@ const Header = styled.h1`
     font-size: 75px;
     text-align: unset;
   }
+`
+
+const ListItem = styled.li`
+  font-size: 14px;
 `
 
 const Button = styled(Link)`
@@ -135,4 +139,5 @@ export {
   FooterTag,
   ImageBackground,
   MainDiv,
+  ListItem,
 }

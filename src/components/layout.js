@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
       <Header />
       <main
         css={css`
-          margin-top: 6vh;
+          margin-top: 7vh;
         `}
       >
         {children}

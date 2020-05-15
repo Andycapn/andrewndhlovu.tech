@@ -40,7 +40,9 @@ const IndexPage = () => {
         ease: Power3.easeOut,
       },
       1.4
-    ).from(body1, 1, { y: 10, opacity: 0, ease: Power3.easeOut }, 2.4)
+    )
+      .from(body1, 1, { y: 10, opacity: 0, ease: Power3.easeOut }, 2.4)
+      .paused()
   }, [tl])
 
   const { image } = useStaticQuery(graphql`

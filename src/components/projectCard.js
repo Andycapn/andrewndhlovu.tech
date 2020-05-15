@@ -18,11 +18,14 @@ const ProjectCard = props => {
   return (
     <>
       <Card
-        style={{
-          width: "20.6em",
-          margin: "1em",
-          boxShadow: "0px 0px 118px -29px rgba(0,0,0,0.75)",
-        }}
+        css={css`
+          width: 21.5em;
+          margin: 1.5em 0 1.5em 0;
+          box-shadow: 0px 0px 118px -29px rgba(0, 0, 0, 0.75);
+          @media screen and (min-width: 768px) {
+            margin: 1em;
+          }
+        `}
       >
         <img className="card-img" src={props.img} alt="" />
         <Card.Body>

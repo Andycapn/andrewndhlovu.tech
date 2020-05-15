@@ -60,8 +60,8 @@ const Footer = () => {
         `}
       >
         <FooterText>
-          Copyright &copy; {new Date().getFullYear()} Andrew Ndhlovu || Lusaka
-          Based Software Dev
+          Copyright &copy; {new Date().getFullYear()} Andrew Ndhlovu &bull;
+          Lusaka Based Software Dev
         </FooterText>
       </section>
     </FooterTag>
