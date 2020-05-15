@@ -7,25 +7,14 @@ import { ExternalLink, FooterText, FooterTag } from "./MyStyledComonents"
 const Footer = () => {
   return (
     <FooterTag>
-      <section
-        css={css`
-          grid-row: 1/2;
-          display: flex;
-          list-style: none;
-          margin-left: auto;
-          margin-right: auto;
-        `}
-      >
-        <FooterText>
-          &copy; Andrew Ndhlovu {new Date().getFullYear()}
-        </FooterText>
-      </section>
       <ul
         css={css`
-          grid-row: 2/3;
-          display: flex;
+          grid-row: 1/2;
           list-style: none;
           margin: auto;
+          @media screen and (min-width: 768px) {
+            display: flex;
+          }
         `}
       >
         <li style={{ display: "flex", alignItems: "center" }}>
@@ -55,6 +44,20 @@ const Footer = () => {
           <ExternalLink href="#">andrew@andrewndhlovu.tech</ExternalLink>
         </li>
       </ul>
+      <section
+        css={css`
+          grid-row: 2/3;
+          display: flex;
+          list-style: none;
+          margin-left: auto;
+          margin-right: auto;
+        `}
+      >
+        <FooterText>
+          Copyright &copy; {new Date().getFullYear()} Andrew Ndhlovu || Lusaka
+          Based Software Dev
+        </FooterText>
+      </section>
     </FooterTag>
   )
 }

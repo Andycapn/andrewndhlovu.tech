@@ -7,7 +7,12 @@ import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import { Power3, TimelineLite } from "gsap"
 import BackgroundImage from "gatsby-background-image"
-import { BodyText, Header, Button } from "../components/MyStyledComonents"
+import {
+  BodyText,
+  Header,
+  Button,
+  MainDiv,
+} from "../components/MyStyledComonents"
 
 const ImageBackground = styled(BackgroundImage)`
   background-position: center;
@@ -64,24 +69,20 @@ const IndexPage = () => {
         css={css`
           background-color: #0b132b;
           opacity: 0;
+          min-height: 100vh;
         `}
       >
-        <main
-          css={css`
-            min-height: 100vh;
-
-            @media screen and (min-width: 1024px) {
-              padding: 0.5rem calc((100vw - 960px) / 2);
-            }
-            @media screen and (min-width: 1440px) {
-              padding: 0.5rem calc((100vw - 1300px) / 2);
-            }
-          `}
-        >
+        <MainDiv style={{ height: "100vh" }}>
           <div
             css={css`
               position: relative;
               top: 150px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              @media screen and (min-width: 1024px) {
+                align-items: unset;
+              }
             `}
           >
             <Header ref={el => (heading1 = el)}>Hi, My name is Andrew.</Header>
@@ -94,22 +95,25 @@ const IndexPage = () => {
               I build interesting and innovative online experiences. Click below
               to learn more or see some of my work.
             </BodyText>
-            <Button
-              to={`/portfolio`}
-              className={`bg-primary`}
-              ref={el => (button2 = el)}
-            >
-              View Portfolio
-            </Button>
-            <Button
-              style={{ marginLeft: "0", marginTop: "1em" }}
-              ref={el => (buttons = el)}
-              className={`bg-primary`}
-            >
-              About Me
-            </Button>
+            <span>
+              <Button
+                to={`/portfolio`}
+                className={`bg-primary`}
+                ref={el => (button2 = el)}
+                style={{ marginLeft: "0" }}
+              >
+                View Portfolio
+              </Button>
+              <Button
+                to={`/about`}
+                ref={el => (buttons = el)}
+                className={`bg-primary`}
+              >
+                About Me
+              </Button>
+            </span>
           </div>
-        </main>
+        </MainDiv>
       </ImageBackground>
     </Layout>
   )

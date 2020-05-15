@@ -13,6 +13,7 @@ const ImageBackground = styled(BackgroundImage)`
 // Page Elements
 
 const MainDiv = styled.main`
+  padding: 0.5rem calc((100vw - 350px) / 2);
   @media screen and (min-width: 1024px) {
     padding: 0.5rem calc((100vw - 960px) / 2);
   }
@@ -24,14 +25,22 @@ const MainDiv = styled.main`
 const BodyText = styled.p`
   letter-spacing: 0.1px;
   color: #fff;
+  text-align: center;
+  @media screen and (min-width: 1440px) {
+    text-align: unset;
+  }
 `
 
 const SubText = styled
 
 const Header = styled.h1`
+  text-align: center;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 75px;
   color: #fff;
+  @media screen and (min-width: 1440px) {
+    font-size: 75px;
+    text-align: unset;
+  }
 `
 
 const Button = styled(Link)`
@@ -81,7 +90,7 @@ const FooterText = styled.p`
   font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: normal;
-  line-height: 0.5;
+  line-height: 1;
   margin: 0 0.5rem 0 0;
   padding: 0.7rem;
   @media (min-width: 998px) {
