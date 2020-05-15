@@ -1,23 +1,19 @@
 // Gatsby supports TypeScript natively!
 import React, { useEffect, useRef } from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import BackgroundImage from "gatsby-background-image"
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import styled from "@emotion/styled"
 import { css } from "@emotion/core"
-import { Header } from "./index"
-import { TimelineLite, Power3, Power4 } from "gsap"
+
+import {
+  Header,
+  ImageBackground,
+  MainDiv,
+} from "../components/MyStyledComonents"
+
+import { TimelineLite, Power4 } from "gsap"
 import ProjectCard from "../components/projectCard"
 import { projectsArray } from "../components/projectData"
-import { Text } from "./index"
-import { Alert, Jumbotron } from "react-bootstrap"
-
-const ImageBackground = styled(BackgroundImage)`
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat-y;
-`
 
 const SecondPage = () => {
   let title = useRef(null)
@@ -30,7 +26,7 @@ const SecondPage = () => {
       opacity: 0,
       ease: Power4.easeOut,
     })
-  }, [])
+  }, [tl])
 
   //Image Queries.
   const { background } = useStaticQuery(graphql`
@@ -62,17 +58,7 @@ const SecondPage = () => {
           opacity: 0;
         `}
       >
-        <main
-          css={css`
-            margin: 62px auto;
-            @media screen and (min-width: 1024px) {
-              padding: 0.5rem calc((100vw - 960px) / 2);
-            }
-            @media screen and (min-width: 1440px) {
-              padding: 4rem calc((100vw - 1300px) / 2);
-            }
-          `}
-        >
+        <MainDiv>
           <Header ref={el => (title = el)}>My Projects</Header>
           <section
             className="projects"
@@ -95,7 +81,7 @@ const SecondPage = () => {
               />
             ))}
           </section>
-        </main>
+        </MainDiv>
       </ImageBackground>
     </Layout>
   )

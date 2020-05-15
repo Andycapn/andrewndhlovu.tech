@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 import Footer from "./footer"
 import Header from "./header"
@@ -12,16 +11,15 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <>
-        <main>{children}</main>
-      </>
+      <main
+        css={css`
+          margin-top: 6vh;
+        `}
+      >
+        {children}
+      </main>
       <Footer />
     </>
   )
 }
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
 export default Layout

@@ -1,24 +1,61 @@
-import * as React from "react"
+import React from "react"
+import { css } from "@emotion/core"
 import styled from "@emotion/styled"
-
-const FooterElement = styled.footer`
-  position: relative;
-  bottom: 0;
-  background-color: #61f4de;
-  @media screen and (min-width: 1440px) {
-    padding: 0.5rem calc((100vw - 1300px) / 2);
-  }
-`
+import Icons from "./icons"
+import { ExternalLink, FooterText, FooterTag } from "./MyStyledComonents"
 
 const Footer = () => {
   return (
-    <FooterElement>
-      <section></section>
-      <section></section>
-      <section>
-        <p>&copy; Andrew Ndhlovu {new Date().getFullYear()}.</p>
+    <FooterTag>
+      <section
+        css={css`
+          grid-row: 1/2;
+          display: flex;
+          list-style: none;
+          margin-left: auto;
+          margin-right: auto;
+        `}
+      >
+        <FooterText>
+          &copy; Andrew Ndhlovu {new Date().getFullYear()}
+        </FooterText>
       </section>
-    </FooterElement>
+      <ul
+        css={css`
+          grid-row: 2/3;
+          display: flex;
+          list-style: none;
+          margin: auto;
+        `}
+      >
+        <li style={{ display: "flex", alignItems: "center" }}>
+          <img
+            style={{ width: "25px", height: "25px", marginBottom: "0" }}
+            src={Icons.githubIcon}
+            alt=""
+          />
+          <ExternalLink href="https://github.com/andycapn" target="_blank">
+            GitHub
+          </ExternalLink>
+        </li>
+        <li style={{ display: "flex", alignItems: "center" }}>
+          <img
+            style={{ width: "25px", height: "25px", marginBottom: "0" }}
+            src={Icons.linkedInIcon}
+            alt=""
+          />
+          <ExternalLink href="#">LinkedIn</ExternalLink>
+        </li>
+        <li style={{ display: "flex", alignItems: "center" }}>
+          <img
+            style={{ width: "25px", height: "25px", marginBottom: "0" }}
+            src={Icons.mailIcon}
+            alt=""
+          />
+          <ExternalLink href="#">andrew@andrewndhlovu.tech</ExternalLink>
+        </li>
+      </ul>
+    </FooterTag>
   )
 }
 

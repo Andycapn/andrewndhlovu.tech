@@ -56,16 +56,16 @@ const Header = () => (
         <NavLink
           className="nav-link"
           activeClassName="active-style"
-          to="/contact"
+          to="/about"
         >
-          Contact Me
+          About
         </NavLink>
         <NavLink
           className="nav-link"
           activeClassName="active-style"
-          to="/about"
+          to="/contact"
         >
-          About
+          Contact Me
         </NavLink>
       </Nav>
     </Navbar.Collapse>

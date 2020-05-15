@@ -7,37 +7,12 @@ import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import { Power3, TimelineLite } from "gsap"
 import BackgroundImage from "gatsby-background-image"
+import { BodyText, Header, Button } from "../components/MyStyledComonents"
 
 const ImageBackground = styled(BackgroundImage)`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-`
-
-// Styled Components
-
-export const Header = styled.h1`
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 75px;
-  color: #fff;
-`
-export const Text = styled.p`
-  letter-spacing: 0.1px;
-`
-
-const Button = styled(Link)`
-  color: #63dfe4;
-  margin: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  font-family: "Josefin Sans", sans-serif;
-  transition: 0.2s ease-out;
-  text-decoration: none;
-  &:hover {
-    color: #63dfe4;
-    text-decoration: none;
-    background-color: #6e78ff;
-  }
 `
 
 const IndexPage = () => {
@@ -87,14 +62,14 @@ const IndexPage = () => {
         tag={`section`}
         fluid={BackgroundImages}
         css={css`
-          min-height: 100vh;
           background-color: #0b132b;
           opacity: 0;
         `}
       >
         <main
           css={css`
-            margin: 62px auto;
+            min-height: 100vh;
+
             @media screen and (min-width: 1024px) {
               padding: 0.5rem calc((100vw - 960px) / 2);
             }
@@ -110,16 +85,15 @@ const IndexPage = () => {
             `}
           >
             <Header ref={el => (heading1 = el)}>Hi, My name is Andrew.</Header>
-            <Text
+            <BodyText
               css={css`
-                color: aliceblue;
                 max-width: 700px;
               `}
               ref={el => (body1 = el)}
             >
               I build interesting and innovative online experiences. Click below
               to learn more or see some of my work.
-            </Text>
+            </BodyText>
             <Button
               to={`/portfolio`}
               className={`bg-primary`}
