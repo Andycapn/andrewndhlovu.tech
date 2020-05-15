@@ -4,6 +4,9 @@ import { css } from "@emotion/core"
 import Footer from "./footer"
 import Header from "./header"
 import "./layout.css"
+import CSSPlugin from "gsap"
+
+const cssPlugin = CSSPlugin
 
 const Layout = ({ children }) => {
   return (
