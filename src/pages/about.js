@@ -160,6 +160,9 @@ const About = () => {
                 </ul>
               </section>
             </Jumbotron>
+            <a href="../assets/Andrew%20Ndhlovu%20CV.pdf" download>
+              Download My C.V.
+            </a>
           </section>
         </MainDiv>
       </ImageBackground>
