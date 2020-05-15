@@ -6,7 +6,13 @@ import { ExternalLink, FooterText, FooterTag } from "./MyStyledComonents"
 
 const Footer = () => {
   return (
-    <FooterTag>
+    <FooterTag
+      css={css`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      `}
+    >
       <ul
         css={css`
           grid-row: 1/2;

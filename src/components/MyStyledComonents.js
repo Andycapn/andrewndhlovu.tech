@@ -13,7 +13,7 @@ const ImageBackground = styled(BackgroundImage)`
 // Page Elements
 
 const MainDiv = styled.main`
-  padding: 0.5rem calc((100vw - 350px) / 2);
+  padding: 5vh calc((100vw - 360px) / 2) 0.5rem;
   @media screen and (min-width: 1024px) {
     padding: 0.5rem calc((100vw - 960px) / 2);
   }
@@ -90,9 +90,13 @@ const FooterText = styled.p`
   font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: normal;
-  line-height: 1;
+  line-height: 1.4;
   margin: 0 0.5rem 0 0;
   padding: 0.7rem;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    text-align: unset;
+  }
   @media (min-width: 998px) {
     font-size: 12px;
     line-height: 1;

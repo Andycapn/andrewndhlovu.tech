@@ -19,7 +19,7 @@ const ProjectCard = props => {
     <>
       <Card
         style={{
-          width: "26rem",
+          width: "20.6em",
           margin: "1em",
           boxShadow: "0px 0px 118px -29px rgba(0,0,0,0.75)",
         }}

@@ -8,10 +8,10 @@ import { css } from "@emotion/core"
 const NavLink = styled(Link)`
   font-family: "Rubik", sans-serif;
   font-size: small;
-  color: aliceblue;
 
-  &active-style {
-    color: black;
+  &.nav-link {
+    padding-left: 1em;
+    padding-right: 1em;
   }
 `
 
@@ -28,7 +28,7 @@ const Header = () => (
         padding: 0.5rem calc((100vw - 1300px) / 2);
       }
     `}
-    variant="dark"
+    className="navbar-dark"
   >
     <Link
       to="/"
@@ -46,28 +46,16 @@ const Header = () => (
     />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto" variant="pills">
-        <NavLink className="nav-link" activeClassName="active-style" to="/">
+        <NavLink className="nav-link" activeClassName="active" to="/">
           Home
         </NavLink>
-        <NavLink
-          className="nav-link"
-          activeClassName="active-style"
-          to="/portfolio"
-        >
+        <NavLink className="nav-link" activeClassName="active" to="/portfolio">
           Portfolio
         </NavLink>
-        <NavLink
-          className="nav-link"
-          activeClassName="active-style"
-          to="/about"
-        >
+        <NavLink className="nav-link" activeClassName="active" to="/about">
           About
         </NavLink>
-        <NavLink
-          className="nav-link"
-          activeClassName="active-style"
-          to="/contact"
-        >
+        <NavLink className="nav-link" activeClassName="active" to="/contact">
           Contact Me
         </NavLink>
       </Nav>
