@@ -11,7 +11,7 @@ import {
   MainDiv,
 } from "../components/MyStyledComonents"
 
-import { TimelineLite, Power4 } from "gsap"
+import { TimelineLite, Power4, Power3 } from "gsap"
 import ProjectCard from "../components/projectCard"
 import { projectsArray } from "../components/projectData"
 
@@ -19,12 +19,12 @@ const SecondPage = () => {
   let title = useRef(null)
   let app = useRef(null)
   const tl = new TimelineLite()
-
+  let cards = useRef([])
   useEffect(() => {
     tl.to(app, 0, { opacity: 1 }, 1).from(title, 1, {
-      y: -60,
+      y: 25,
       opacity: 0,
-      ease: Power4.easeOut,
+      ease: Power3.easeOut,
     })
   }, [tl])
 
@@ -33,7 +33,7 @@ const SecondPage = () => {
     query {
       background: file(relativePath: { eq: "portfolio-bg.jpeg" }) {
         childImageSharp {
-          fluid(quality: 70) {
+          fluid(quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -59,11 +59,26 @@ const SecondPage = () => {
         `}
       >
         <MainDiv>
-          <Header ref={el => (title = el)}>My Projects</Header>
+          <Header
+            css={css`
+              text-align: center;
+              @media screen and (min-width: 768px) {
+                margin-top: 2rem;
+                text-align: center;
+              }
+              @media screen and (min-width: 1440px) {
+                margin-top: unset;
+                text-align: center;
+              }
+            `}
+            ref={el => (title = el)}
+          >
+            My Projects
+          </Header>
           <section
             className="projects"
             css={css`
-              @media screen and (min-width: 1440px) {
+              @media screen and (min-width: 1024px) {
                 display: flex;
                 flex-direction: row;
               }
@@ -78,6 +93,7 @@ const SecondPage = () => {
                 codeLink={projectsArray[index].githubLink}
                 demoLink={projectsArray[index].demoLink}
                 disabled={projectsArray[index].disabled}
+                ref={el => (cards.current[index] = el)}
               />
             ))}
           </section>

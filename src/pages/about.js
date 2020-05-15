@@ -26,7 +26,7 @@ const About = () => {
     query {
       background: file(relativePath: { eq: "about-bg.jpeg" }) {
         childImageSharp {
-          fluid(quality: 70) {
+          fluid(quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -57,7 +57,21 @@ const About = () => {
               marginRight: "auto",
             }}
           >
-            <Header style={{ textAlign: "center" }}>About Me</Header>
+            <Header
+              css={css`
+                text-align: center;
+                @media screen and (min-width: 768px) {
+                  margin-top: 2rem;
+                  text-align: center;
+                }
+                @media screen and (min-width: 1440px) {
+                  margin-top: unset;
+                  text-align: center;
+                }
+              `}
+            >
+              About Me
+            </Header>
             <AboutText>
               I'm a Software & full-stack web developer and UI/UX javascript
               specialist based in Lusaka, Zambia. With experience working with
@@ -80,21 +94,27 @@ const About = () => {
           <section>
             <Jumbotron
               css={css`
+                margin-top: 2rem;
                 box-shadow: 0px 0px 118px -29px rgba(0, 0, 0, 0.75);
-                @media screen and (min-width: 768px) {
+                @media screen and (min-width: 1024px) {
                   display: grid;
                   grid-template-columns: 1fr 1fr 1fr 1fr;
+                  margin-top: 3rem;
                 }
               `}
             >
               <h3
-                style={{
-                  fontFamily: "'Josefin Sans', sans serif",
-                  textAlign: "center",
-                  gridColumn: "1/5",
-                }}
+                css={css`
+                  font-family: "Josefin Sans", sans serif;
+                  text-align: center;
+                  grid-column: 1/5;
+                  margin-bottom: 1.5rem;
+                  @media screen and (min-width: 768px) {
+                    margin-bottom: 2rem;
+                  }
+                `}
               >
-                Technologies I use.
+                Toolkit.
               </h3>
               <section style={{ gridColumn: "1/2" }}>
                 <h6 style={{ fontFamily: "'Rubik', sans serif" }}>
@@ -119,12 +139,24 @@ const About = () => {
               </section>
               <section style={{ gridColumn: "3/4" }}>
                 <h6 style={{ fontFamily: "'Rubik', sans serif" }}>
-                  Technologies/Misc
+                  Technologies
                 </h6>
                 <ul>
                   <ListItem>MongoDB</ListItem>
                   <ListItem>SQL, MySQL</ListItem>
                   <ListItem>Version Control (git)</ListItem>
+                </ul>
+              </section>
+              <section style={{ gridColumn: "4/5" }}>
+                <h6 style={{ fontFamily: "'Rubik', sans serif" }}>
+                  Technical/Professional
+                </h6>
+                <ul>
+                  <ListItem>Linux System/Server Administration</ListItem>
+                  <ListItem>
+                    Network Design, Implementation & Maintenance
+                  </ListItem>
+                  <ListItem>MikroTik Router Administration</ListItem>
                 </ul>
               </section>
             </Jumbotron>

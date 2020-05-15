@@ -14,6 +14,9 @@ const ImageBackground = styled(BackgroundImage)`
 
 const MainDiv = styled.main`
   padding: 5vh calc((100vw - 345px) / 2) 0.5rem;
+  @media screen and (min-width: 768px) {
+    padding: 0.5rem calc((100vw - 750px) / 2);
+  }
   @media screen and (min-width: 1024px) {
     padding: 0.5rem calc((100vw - 960px) / 2);
   }

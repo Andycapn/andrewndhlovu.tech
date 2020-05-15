@@ -19,11 +19,13 @@ const ProjectCard = props => {
     <>
       <Card
         css={css`
-          width: 21.5em;
           margin: 1.5em 0 1.5em 0;
           box-shadow: 0px 0px 118px -29px rgba(0, 0, 0, 0.75);
           @media screen and (min-width: 768px) {
             margin: 1em;
+          }
+          @media screen and (min-width: 1024px) {
+            width: 21rem;
           }
         `}
       >

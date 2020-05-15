@@ -49,7 +49,7 @@ const IndexPage = () => {
     query {
       image: file(relativePath: { eq: "home-bg.jpeg" }) {
         sharp: childImageSharp {
-          fluid(quality: 70) {
+          fluid(quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -82,7 +82,7 @@ const IndexPage = () => {
               display: flex;
               flex-direction: column;
               align-items: center;
-              @media screen and (min-width: 1024px) {
+              @media screen and (min-width: 1440px) {
                 align-items: unset;
               }
             `}
