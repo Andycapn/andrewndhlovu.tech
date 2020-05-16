@@ -161,8 +161,8 @@ const About = () => {
               </section>
             </Jumbotron>
             <a
-              href="https://www.filehosting.org/file/details/869067/Andrew%20Ndhlovu%20CV.pdf"
-              download
+              href="https://storage.cloud.google.com/files.andrewndhlovu.tech/Andrew%20Ndhlovu%20CV.pdf"
+              target="_blank"
             >
               Download My C.V.
             </a>
