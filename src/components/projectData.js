@@ -1,6 +1,7 @@
 import nkobaProj from "../images/nkoba.png"
 import todoProj from "../images/todo.png"
 import gameProj from "../images/game.png"
+import houseProj from "../images/housekeepr.png"
 
 export const projectsArray = [
   {
@@ -14,11 +15,11 @@ export const projectsArray = [
   },
   {
     id: 2,
-    title: "React To-Do App",
-    desc: "A To Do Application Built using JavaScript & ReactJS.",
-    img: todoProj,
-    githubLink: "https://github.com/Andycapn/React-Todo",
-    demoLink: "https://todo.demo.andrewndhlovu.tech",
+    title: "HouseKeepr",
+    desc:
+      "Housekeeping application for conducting inspections. Built using React and NodeJS",
+    img: houseProj,
+    githubLink: null,
   },
   {
     id: 3,
