@@ -59,7 +59,7 @@ const IndexPage = () => {
 
   const BackgroundImages = [
     image.sharp.fluid,
-    `linear-gradient(176deg, rgba(108,141,250,1) 0%, rgba(104,182,239,0.2987570028011205) 58%, rgba(97,244,222,1) 100%)`,
+    `linear-gradient(176deg, rgba(108,141,250,1) 0%, rgba(104,182,239,0.29) 58%, rgba(97,244,222,1) 100%)`,
   ].reverse()
 
   return (

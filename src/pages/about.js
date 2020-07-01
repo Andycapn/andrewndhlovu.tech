@@ -125,6 +125,7 @@ const About = () => {
                   <ListItem>C#</ListItem>
                   <ListItem>Java</ListItem>
                   <ListItem>Python</ListItem>
+                  <ListItem>Php</ListItem>
                 </ul>
               </section>
               <section style={{ gridColumn: "2/3" }}>
@@ -145,6 +146,7 @@ const About = () => {
                   <ListItem>MongoDB</ListItem>
                   <ListItem>SQL, MySQL</ListItem>
                   <ListItem>Version Control (git)</ListItem>
+                  <ListItem>WordPress</ListItem>
                 </ul>
               </section>
               <section style={{ gridColumn: "4/5" }}>
