@@ -56,7 +56,7 @@ const About = () => {
               margin-left: auto;
               margin-right: auto;
 
-              /* Setting A Right Padding on Larger Displays */
+              /* Setting A Right Padding on Larger Displays. */
               @media screen and (min-width: 1440px) {
                 padding-right: 15em;
               }
