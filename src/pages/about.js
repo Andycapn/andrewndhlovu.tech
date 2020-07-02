@@ -51,22 +51,24 @@ const About = () => {
       >
         <MainDiv>
           <section
-            style={{
-              maxWidth: "1000px",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
+            css={css`
+              max-width: 1400px;
+              margin-left: auto;
+              margin-right: auto;
+
+              /* Setting A Right Padding on Larger Displays */
+              @media screen and (min-width: 1440px) {
+                padding-right: 15em;
+              }
+            `}
           >
             <Header
               css={css`
-                text-align: center;
                 @media screen and (min-width: 768px) {
                   margin-top: 2rem;
-                  text-align: center;
                 }
                 @media screen and (min-width: 1440px) {
                   margin-top: unset;
-                  text-align: center;
                 }
               `}
             >

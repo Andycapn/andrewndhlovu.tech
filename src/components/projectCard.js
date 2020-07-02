@@ -46,6 +46,7 @@ const ProjectCard = props => {
             intent="primary"
             icon={`code`}
             target="_blank"
+            disabled={props.codeDisabled}
           >
             View Code
           </MyButton>{" "}

@@ -24,7 +24,7 @@ const AboutText = styled(BodyText)`
 const Contact = () => {
   const { background } = useStaticQuery(graphql`
     query {
-      background: file(relativePath: { eq: "about-bg.jpeg" }) {
+      background: file(relativePath: { eq: "contact.jpg" }) {
         childImageSharp {
           fluid(quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
@@ -59,16 +59,13 @@ const Contact = () => {
           >
             <Header
               css={css`
-                text-align: center;
                 @media screen and (min-width: 768px) {
                   /* Top Margin for Medium Sized Laptops */
                   margin-top: 2rem;
-                  text-align: center;
                 }
                 @media screen and (min-width: 1440px) {
                   /* Remove Top Margin on Large Displays */
                   margin-top: unset;
-                  text-align: center;
                 }
               `}
             >
@@ -92,6 +89,7 @@ const Contact = () => {
                     justify-content: space-between;
                   }
                 `}
+                className=""
               >
                 <Form.Group
                   controlId=""

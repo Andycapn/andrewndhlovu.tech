@@ -81,6 +81,7 @@ const SecondPage = () => {
               @media screen and (min-width: 1024px) {
                 display: flex;
                 flex-direction: row;
+                flex-wrap: wrap;
               }
             `}
           >
@@ -92,7 +93,8 @@ const SecondPage = () => {
                 desc={projectsArray[index].desc}
                 codeLink={projectsArray[index].githubLink}
                 demoLink={projectsArray[index].demoLink}
-                disabled={projectsArray[index].disabled}
+                disabled={projectsArray[index].demoDisabled}
+                codeDisabled={projectsArray[index].codeDisabled}
                 ref={el => (cards.current[index] = el)}
               />
             ))}

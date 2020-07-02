@@ -20,6 +20,7 @@ export const projectsArray = [
       "Housekeeping application for conducting inspections. Built using React and NodeJS",
     img: houseProj,
     githubLink: null,
+    demoDisabled: "true",
   },
   {
     id: 3,
@@ -28,6 +29,6 @@ export const projectsArray = [
       "This is a game that I built as part of my 'Intro To Programming' course. It is built using JavaScript and the p5.JS library.",
     img: gameProj,
     githubLink: "https://github.com/Andycapn/SimpleGame",
-    disabled: "true",
+    demoDisabled: "true",
   },
 ]
