@@ -6,20 +6,12 @@ import {
   ImageBackground,
   MainDiv,
   Header,
-  BodyText,
-  ListItem,
 } from "../components/MyStyledComonents"
 import { css } from "@emotion/core"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
-import { Jumbotron, Form, Button } from "react-bootstrap"
-
-const AboutText = styled(BodyText)`
-  font-size: 18px;
-  @media screen and (min-width: 768px) {
-    font-size: 25px;
-  }
-`
+import { Form, Button } from "react-bootstrap"
+import { useState } from "react"
 
 const Contact = () => {
   const { background } = useStaticQuery(graphql`
@@ -38,6 +30,43 @@ const Contact = () => {
     background.childImageSharp.fluid,
     `linear-gradient(187deg, rgba(104,182,239,1) 0%, rgba(108,141,250,0.6) 67%, rgba(97,244,222,1) 100%)`,
   ].reverse()
+
+  // Initializing State for Contact Form
+  const [formState, setFormState] = useState({
+    email: "",
+    firstName: "",
+    lastName: "",
+    phone: "",
+    message: "",
+  })
+
+  // URI Encode data
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  //On Change Handler for Form State
+  const handleChange = e => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  //Submit Handler for the form
+  const handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formState }),
+    })
+      .then(() => alert("We've got your Message!"))
+      .catch(error => alert(error))
+
+    e.preventDefault()
+  }
 
   return (
     <Layout>
@@ -76,10 +105,25 @@ const Contact = () => {
                 padding: 2rem;
                 border-radius: 5px;
               `}
+              name="andrewndhlovu.tech"
+              onSubmit={handleSubmit}
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
             >
+              <input
+                type="hidden"
+                name="form-name"
+                value="andrewndhlovu.tech"
+              />
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="name@example.com" />
+                <Form.Control
+                  onChange={handleChange}
+                  type="email"
+                  placeholder="name@example.com"
+                  name="email"
+                />
               </Form.Group>
               <span
                 css={css`
@@ -100,6 +144,7 @@ const Contact = () => {
                     type="text"
                     name="firstName"
                     placeholder="First Name"
+                    onChange={handleChange}
                   />
                 </Form.Group>
                 <Form.Group
@@ -111,6 +156,7 @@ const Contact = () => {
                     type="text"
                     name="lastName"
                     placeholder="Last Name"
+                    onChange={handleChange}
                   />
                 </Form.Group>
               </span>
@@ -118,8 +164,9 @@ const Contact = () => {
                 <Form.Label>Contact Number</Form.Label>
                 <Form.Control
                   type="phone"
-                  name="firstName"
+                  name="phone"
                   placeholder="+260"
+                  onChange={handleChange}
                 />
               </Form.Group>
               <Form.Group controlId="">
@@ -128,6 +175,7 @@ const Contact = () => {
                   as="textarea"
                   rows="10"
                   placeholder="Your Message"
+                  onChange={handleChange}
                 />
               </Form.Group>
               <Button type="submit" variant="success">
