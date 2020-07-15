@@ -39,7 +39,7 @@ const Footer = () => {
             alt=""
           />
           <ExternalLink
-            href="https://www.linkedin.com/in/andrew-ndhlovu-297b46157/"
+            href="www.linkedin.com/in/andrew-ndhlovu"
             target="_blank"
             rel="noreferrer"
           >
