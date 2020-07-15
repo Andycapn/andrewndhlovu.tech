@@ -97,10 +97,13 @@ const IndexPage = () => {
           <div
             css={css`
               position: relative;
-              top: 150px;
+              top: 50px;
               display: flex;
               flex-direction: column;
               align-items: center;
+              @media screen and (min-width: 768px) {
+                top: 150px;
+              }
               @media screen and (min-width: 1440px) {
                 align-items: unset;
               }
