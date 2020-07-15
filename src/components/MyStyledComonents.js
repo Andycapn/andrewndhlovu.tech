@@ -53,8 +53,9 @@ const ListItem = styled.li`
   font-size: 14px;
 `
 
+// BUTTON //
 const Button = styled(Link)`
-  color: #63dfe4;
+  color: white;
   margin: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -62,12 +63,13 @@ const Button = styled(Link)`
   transition: 0.2s ease-out;
   text-decoration: none;
   &:hover {
-    color: #63dfe4;
+    color: white;
     text-decoration: none;
     background-color: #6e78ff;
   }
 `
 
+// EXTERNAL LINK //
 const ExternalLink = styled.a`
   color: #4f4f4f;
   font-family: "Rubik", sans-serif;

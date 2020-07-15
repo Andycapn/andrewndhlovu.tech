@@ -6,20 +6,12 @@ import {
   ImageBackground,
   MainDiv,
   Header,
-  BodyText,
-  ListItem,
 } from "../components/MyStyledComonents"
 import { css } from "@emotion/core"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
-import { Jumbotron, Form, Button } from "react-bootstrap"
-
-const AboutText = styled(BodyText)`
-  font-size: 18px;
-  @media screen and (min-width: 768px) {
-    font-size: 25px;
-  }
-`
+import { Form, Button } from "react-bootstrap"
+import { useState } from "react"
 
 const Contact = () => {
   const { background } = useStaticQuery(graphql`
@@ -76,10 +68,17 @@ const Contact = () => {
                 padding: 2rem;
                 border-radius: 5px;
               `}
+              action="https://send.pageclip.co/z2YIouuUsGQMSNfigkiq9BBEZvMg44dj/Contact-me"
+              className="pageclip-form"
+              method="POST"
             >
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="name@example.com" />
+                <Form.Control
+                  type="email"
+                  placeholder="name@example.com"
+                  name="email"
+                />
               </Form.Group>
               <span
                 css={css`
@@ -98,7 +97,7 @@ const Contact = () => {
                   <Form.Label>First name</Form.Label>
                   <Form.Control
                     type="text"
-                    name="firstName"
+                    name="first-name"
                     placeholder="First Name"
                   />
                 </Form.Group>
@@ -109,18 +108,14 @@ const Contact = () => {
                   <Form.Label>Last name</Form.Label>
                   <Form.Control
                     type="text"
-                    name="lastName"
+                    name="last-name"
                     placeholder="Last Name"
                   />
                 </Form.Group>
               </span>
               <Form.Group controlId="">
                 <Form.Label>Contact Number</Form.Label>
-                <Form.Control
-                  type="phone"
-                  name="firstName"
-                  placeholder="+260"
-                />
+                <Form.Control type="phone" name="phone" placeholder="+260" />
               </Form.Group>
               <Form.Group controlId="">
                 <Form.Label>Message</Form.Label>
@@ -130,8 +125,12 @@ const Contact = () => {
                   placeholder="Your Message"
                 />
               </Form.Group>
-              <Button type="submit" variant="success">
-                Submit
+              <Button
+                type="submit"
+                variant="success"
+                className="pageclip-form__submit"
+              >
+                <span>Submit</span>
               </Button>
             </Form>
           </section>
