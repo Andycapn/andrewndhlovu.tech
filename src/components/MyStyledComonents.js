@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
+import { css } from "@emotion/core"
 
 // Background Image Element
 
@@ -52,6 +53,7 @@ const ListItem = styled.li`
 `
 
 // BUTTON //
+
 const Button = styled(Link)`
   color: white;
   margin: 0.5rem;
@@ -63,7 +65,6 @@ const Button = styled(Link)`
   &:hover {
     color: white;
     text-decoration: none;
-    background-color: #6e78ff;
   }
 `
 
@@ -94,7 +95,6 @@ const ExternalLink = styled.a`
 `
 
 // Footer Elements
-
 const FooterText = styled.p`
   color: #4f4f4f;
   font-family: "Rubik", sans-serif;
@@ -117,6 +117,7 @@ const FooterText = styled.p`
   }
 `
 
+// Pre-Styled HTML Footer Tag
 const FooterTag = styled.footer`
   background-color: #61f4de;
   padding: 2rem calc((100vw - 1366px) / 2);

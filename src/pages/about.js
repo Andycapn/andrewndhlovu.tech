@@ -17,14 +17,14 @@ import { Jumbotron } from "react-bootstrap"
 const AboutText = styled(BodyText)`
   font-size: 18px;
   @media screen and (min-width: 768px) {
-    font-size: 25px;
+    font-size: 20px;
   }
 `
 
 const About = () => {
   const { background } = useStaticQuery(graphql`
     query {
-      background: file(relativePath: { eq: "about-bg.jpeg" }) {
+      background: file(relativePath: { eq: "about-bg.jpg" }) {
         childImageSharp {
           fluid(quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
@@ -34,8 +34,10 @@ const About = () => {
     }
   `)
 
+  // Overlay Background Image with Gradient
   const BackgroundImages = [
     background.childImageSharp.fluid,
+    `linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.7) 100%)`,
     `linear-gradient(187deg, rgba(104,182,239,1) 0%, rgba(108,141,250,0.6) 67%, rgba(97,244,222,1) 100%)`,
   ].reverse()
 
@@ -57,9 +59,6 @@ const About = () => {
               margin-right: auto;
 
               /* Setting A Right Padding on Larger Displays. */
-              @media screen and (min-width: 1440px) {
-                padding-right: 15em;
-              }
             `}
           >
             <Header
@@ -96,6 +95,7 @@ const About = () => {
           <section>
             <Jumbotron
               css={css`
+                padding-left: 5.5%;
                 margin-top: 2rem;
                 box-shadow: 0px 0px 118px -29px rgba(0, 0, 0, 0.75);
                 @media screen and (min-width: 1024px) {

@@ -20,6 +20,25 @@ const ImageBackground = styled(BackgroundImage)`
   background-repeat: no-repeat;
 `
 
+const ButtonStyling = {
+  buttonOne: css`
+    background-color: #32416d;
+    border: 1px solid #32416d;
+    &:hover {
+      background-color: #405390;
+      border: 1px solid #405390;
+    }
+  `,
+
+  buttonTwo: css`
+    border: 1px solid #eee;
+    &:hover {
+      background-color: #eee;
+      color: #32416d;
+    }
+  `,
+}
+
 const IndexPage = () => {
   let heading1 = useRef(null)
   let body1 = useRef(null)
@@ -45,7 +64,7 @@ const IndexPage = () => {
 
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "home-bg.jpeg" }) {
+      image: file(relativePath: { eq: "home-bg.jpg" }) {
         sharp: childImageSharp {
           fluid(quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
@@ -55,8 +74,10 @@ const IndexPage = () => {
     }
   `)
 
+  // Overlay Background Image with Gradient
   const BackgroundImages = [
     image.sharp.fluid,
+    `linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.7) 100%)`,
     `linear-gradient(176deg, rgba(108,141,250,1) 0%, rgba(104,182,239,0.29) 58%, rgba(97,244,222,1) 100%)`,
   ].reverse()
 
@@ -85,7 +106,17 @@ const IndexPage = () => {
               }
             `}
           >
-            <Header ref={el => (heading1 = el)}>Hi, My name is Andrew.</Header>
+            <Header
+              css={css`
+                font-size: 80px;
+                @media screen and (min-width: 1024px) {
+                  font-size: 100px;
+                }
+              `}
+              ref={el => (heading1 = el)}
+            >
+              Hi, My name is Andrew.
+            </Header>
             <BodyText
               css={css`
                 max-width: 700px;
@@ -97,13 +128,13 @@ const IndexPage = () => {
             </BodyText>
             <span>
               <Button
+                css={ButtonStyling.buttonOne}
                 to={`/portfolio`}
-                className={`bg-primary`}
                 style={{ marginLeft: "0" }}
               >
                 View Portfolio
               </Button>
-              <Button to={`/about`} className={`bg-primary`}>
+              <Button css={ButtonStyling.buttonTwo} to={`/about`}>
                 About Me
               </Button>
             </span>
@@ -113,5 +144,4 @@ const IndexPage = () => {
     </Layout>
   )
 }
-
 export default IndexPage

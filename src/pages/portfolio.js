@@ -31,7 +31,7 @@ const SecondPage = () => {
   //Image Queries.
   const { background } = useStaticQuery(graphql`
     query {
-      background: file(relativePath: { eq: "portfolio-bg.jpeg" }) {
+      background: file(relativePath: { eq: "portfolio-bg.jpg" }) {
         childImageSharp {
           fluid(quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
@@ -41,8 +41,10 @@ const SecondPage = () => {
     }
   `)
 
+  // Overlay Background Image with Gradient
   const BackgroundImages = [
     background.childImageSharp.fluid,
+    `linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.7) 100%)`,
     `linear-gradient(176deg, rgba(104,182,239,1) 0%, rgba(108,141,250,0.3) 57%, rgba(97,244,222,1) 100%)`,
   ].reverse()
 
@@ -61,14 +63,12 @@ const SecondPage = () => {
         <MainDiv>
           <Header
             css={css`
-              text-align: center;
+              text-align: left;
               @media screen and (min-width: 768px) {
                 margin-top: 2rem;
-                text-align: center;
               }
               @media screen and (min-width: 1440px) {
                 margin-top: unset;
-                text-align: center;
               }
             `}
             ref={el => (title = el)}

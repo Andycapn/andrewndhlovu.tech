@@ -24,6 +24,7 @@ const Contact = () => {
     }
   `)
 
+  // Overlay Background Image with Gradient
   const BackgroundImages = [
     background.childImageSharp.fluid,
     `linear-gradient(187deg, rgba(104,182,239,1) 0%, rgba(108,141,250,0.6) 67%, rgba(97,244,222,1) 100%)`,

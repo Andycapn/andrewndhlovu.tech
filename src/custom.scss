@@ -29,5 +29,11 @@ html {
 form {
   background-color: white;
 }
+
+.btn-primary {
+  background-color: #405390;
+}
+
+
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
