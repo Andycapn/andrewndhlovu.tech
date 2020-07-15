@@ -11,7 +11,7 @@ import {
   MainDiv,
 } from "../components/MyStyledComonents"
 
-import { TimelineLite, Power4, Power3 } from "gsap"
+import { TimelineLite, Power3 } from "gsap"
 import ProjectCard from "../components/projectCard"
 import { projectsArray } from "../components/projectData"
 

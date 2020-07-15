@@ -9,9 +9,7 @@ import {
 } from "../components/MyStyledComonents"
 import { css } from "@emotion/core"
 import SEO from "../components/seo"
-import styled from "@emotion/styled"
 import { Form, Button } from "react-bootstrap"
-import { useState } from "react"
 
 const Contact = () => {
   const { background } = useStaticQuery(graphql`
@@ -77,7 +75,7 @@ const Contact = () => {
                 <Form.Control
                   type="email"
                   placeholder="name@example.com"
-                  name="email"
+                  name="Email"
                 />
               </Form.Group>
               <span
@@ -97,7 +95,7 @@ const Contact = () => {
                   <Form.Label>First name</Form.Label>
                   <Form.Control
                     type="text"
-                    name="first-name"
+                    name="First Name"
                     placeholder="First Name"
                   />
                 </Form.Group>
@@ -108,7 +106,7 @@ const Contact = () => {
                   <Form.Label>Last name</Form.Label>
                   <Form.Control
                     type="text"
-                    name="last-name"
+                    name="Last Name"
                     placeholder="Last Name"
                   />
                 </Form.Group>
@@ -120,6 +118,7 @@ const Contact = () => {
               <Form.Group controlId="">
                 <Form.Label>Message</Form.Label>
                 <Form.Control
+                  name="Message"
                   as="textarea"
                   rows="10"
                   placeholder="Your Message"

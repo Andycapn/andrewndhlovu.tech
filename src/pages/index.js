@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import React, { useRef, useEffect } from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "../custom.scss"
@@ -24,8 +24,6 @@ const IndexPage = () => {
   let heading1 = useRef(null)
   let body1 = useRef(null)
   let tl = new TimelineLite()
-  let buttons = useRef(null)
-  let button2 = useRef(null)
 
   // GSAP Animations
 
@@ -101,16 +99,11 @@ const IndexPage = () => {
               <Button
                 to={`/portfolio`}
                 className={`bg-primary`}
-                ref={el => (button2 = el)}
                 style={{ marginLeft: "0" }}
               >
                 View Portfolio
               </Button>
-              <Button
-                to={`/about`}
-                ref={el => (buttons = el)}
-                className={`bg-primary`}
-              >
+              <Button to={`/about`} className={`bg-primary`}>
                 About Me
               </Button>
             </span>

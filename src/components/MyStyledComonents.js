@@ -37,8 +37,6 @@ const BodyText = styled.p`
   }
 `
 
-const SubText = styled
-
 const Header = styled.h1`
   text-align: center;
   font-family: "Josefin Sans", sans-serif;

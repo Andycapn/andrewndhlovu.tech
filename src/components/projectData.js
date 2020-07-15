@@ -1,5 +1,4 @@
 import nkobaProj from "../images/nkoba.png"
-import todoProj from "../images/todo.png"
 import gameProj from "../images/game.png"
 import houseProj from "../images/housekeepr.png"
 

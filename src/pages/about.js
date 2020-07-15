@@ -167,6 +167,7 @@ const About = () => {
             <a
               href="https://storage.cloud.google.com/files.andrewndhlovu.tech/Andrew%20Ndhlovu%20CV.pdf"
               target="_blank"
+              rel="noreferrer"
             >
               Download My C.V.
             </a>
