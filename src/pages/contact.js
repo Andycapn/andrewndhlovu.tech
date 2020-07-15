@@ -31,43 +31,6 @@ const Contact = () => {
     `linear-gradient(187deg, rgba(104,182,239,1) 0%, rgba(108,141,250,0.6) 67%, rgba(97,244,222,1) 100%)`,
   ].reverse()
 
-  // Initializing State for Contact Form
-  const [formState, setFormState] = useState({
-    email: "",
-    firstName: "",
-    lastName: "",
-    phone: "",
-    message: "",
-  })
-
-  // URI Encode data
-  const encode = data => {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&")
-  }
-
-  //On Change Handler for Form State
-  const handleChange = e => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  //Submit Handler for the form
-  const handleSubmit = e => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formState }),
-    })
-      .then(() => alert("We've got your Message!"))
-      .catch(error => alert(error))
-
-    e.preventDefault()
-  }
-
   return (
     <Layout>
       <SEO title="About Me" />
@@ -105,30 +68,13 @@ const Contact = () => {
                 padding: 2rem;
                 border-radius: 5px;
               `}
-<<<<<<< HEAD
               action="https://send.pageclip.co/z2YIouuUsGQMSNfigkiq9BBEZvMg44dj/Contact-me"
               className="pageclip-form"
               method="POST"
-=======
-              name="andrewndhlovu.tech"
-              onSubmit={handleSubmit}
-              method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
->>>>>>> ac1c0f40ee73b26812d0249366b93f89449aa6c0
             >
-              <input
-                type="hidden"
-                name="form-name"
-                value="andrewndhlovu.tech"
-              />
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
-<<<<<<< HEAD
-=======
-                  onChange={handleChange}
->>>>>>> ac1c0f40ee73b26812d0249366b93f89449aa6c0
                   type="email"
                   placeholder="name@example.com"
                   name="email"
@@ -153,7 +99,6 @@ const Contact = () => {
                     type="text"
                     name="first-name"
                     placeholder="First Name"
-                    onChange={handleChange}
                   />
                 </Form.Group>
                 <Form.Group
@@ -165,22 +110,12 @@ const Contact = () => {
                     type="text"
                     name="last-name"
                     placeholder="Last Name"
-                    onChange={handleChange}
                   />
                 </Form.Group>
               </span>
               <Form.Group controlId="">
                 <Form.Label>Contact Number</Form.Label>
-<<<<<<< HEAD
                 <Form.Control type="phone" name="phone" placeholder="+260" />
-=======
-                <Form.Control
-                  type="phone"
-                  name="phone"
-                  placeholder="+260"
-                  onChange={handleChange}
-                />
->>>>>>> ac1c0f40ee73b26812d0249366b93f89449aa6c0
               </Form.Group>
               <Form.Group controlId="">
                 <Form.Label>Message</Form.Label>
@@ -188,7 +123,6 @@ const Contact = () => {
                   as="textarea"
                   rows="10"
                   placeholder="Your Message"
-                  onChange={handleChange}
                 />
               </Form.Group>
               <Button
