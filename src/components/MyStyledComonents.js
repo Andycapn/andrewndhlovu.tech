@@ -1,7 +1,6 @@
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
-import { css } from "@emotion/core"
 
 // Background Image Element
 

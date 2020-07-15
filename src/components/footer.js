@@ -38,7 +38,13 @@ const Footer = () => {
             src={Icons.linkedInIcon}
             alt=""
           />
-          <ExternalLink href="#">LinkedIn</ExternalLink>
+          <ExternalLink
+            href="https://www.linkedin.com/in/andrew-ndhlovu-297b46157/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </ExternalLink>
         </li>
         <li style={{ display: "flex", alignItems: "center" }}>
           <img
@@ -46,7 +52,13 @@ const Footer = () => {
             src={Icons.mailIcon}
             alt=""
           />
-          <ExternalLink href="#">andrew@andrewndhlovu.tech</ExternalLink>
+          <ExternalLink
+            href="mailto:andrew@andrewndhlovu.tech"
+            target="_blank"
+            rel="noreferrer"
+          >
+            andrew@andrewndhlovu.tech
+          </ExternalLink>
         </li>
       </ul>
       <section

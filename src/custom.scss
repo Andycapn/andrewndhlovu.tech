@@ -34,6 +34,12 @@ form {
   background-color: #405390;
 }
 
+@media screen and (min-width: 1440px){
+  .projects > .card:first-child {
+    margin-left: 0;
+  }
+}
+
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';

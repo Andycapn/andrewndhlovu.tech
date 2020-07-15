@@ -21,6 +21,14 @@ const AboutText = styled(BodyText)`
   }
 `
 
+const DownloadLinkStyling = css`
+  color: #405390;
+  transition: 200ms ease-in;
+  &:hover {
+    color: #6c8dfa;
+  }
+`
+
 const About = () => {
   const { background } = useStaticQuery(graphql`
     query {
@@ -168,6 +176,7 @@ const About = () => {
               href="https://storage.cloud.google.com/files.andrewndhlovu.tech/Andrew%20Ndhlovu%20CV.pdf"
               target="_blank"
               rel="noreferrer"
+              css={DownloadLinkStyling}
             >
               Download My C.V.
             </a>
