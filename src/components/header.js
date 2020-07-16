@@ -34,8 +34,6 @@ const Header = () => {
     }
   `)
 
-  console.log(Logo)
-
   return (
     <Navbar
       bg="nav-bar"
