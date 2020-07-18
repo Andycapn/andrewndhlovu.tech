@@ -23,6 +23,9 @@ const MainDiv = styled.main`
   @media screen and (min-width: 1024px) {
     padding: 0.5rem calc((100vw - 960px) / 2);
   }
+  @media screen and (min-width: 1366px) {
+    padding: 2.2rem calc((100vw - 1280px) / 2);
+  }
   @media screen and (min-width: 1440px) {
     padding: 2rem calc((100vw - 1300px) / 2);
   }

@@ -111,9 +111,11 @@ const IndexPage = () => {
           >
             <Header
               css={css`
-                font-size: 80px;
-                @media screen and (min-width: 1024px) {
+                @media screen and (max-width: 2560px) {
                   font-size: 100px;
+                }
+                @media screen and (max-width: 1024px) {
+                  font-size: 80px;
                 }
               `}
               ref={el => (heading1 = el)}
@@ -123,6 +125,9 @@ const IndexPage = () => {
             <BodyText
               css={css`
                 max-width: 700px;
+                @media screen and (max-width: 1366px) {
+                  text-align: center;
+                }
               `}
               ref={el => (body1 = el)}
             >

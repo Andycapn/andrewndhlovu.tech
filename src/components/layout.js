@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
       <Header />
       <main
         css={css`
-          margin-top: 7vh;
+          margin-top: 44.25px;
         `}
       >
         {children}
