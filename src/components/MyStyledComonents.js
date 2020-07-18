@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
-// Background Image Element
+// Background Image Element //
 
 const ImageBackground = styled(BackgroundImage)`
   background-size: cover;
@@ -10,12 +10,12 @@ const ImageBackground = styled(BackgroundImage)`
   background-repeat: no-repeat;
 `
 
-// Page Elements
+// Page Elements //
 
 const MainDiv = styled.main`
   padding: 5vh calc((100vw - 345px) / 2) 0.5rem;
   @media screen and (min-width: 425px) {
-    padding: 0.5rem calc((100vw - 400px) / 2);
+    padding: 0.7rem calc((100vw - 400px) / 2);
   }
   @media screen and (min-width: 768px) {
     padding: 0.5rem calc((100vw - 750px) / 2);
@@ -24,19 +24,19 @@ const MainDiv = styled.main`
     padding: 0.5rem calc((100vw - 960px) / 2);
   }
   @media screen and (min-width: 1440px) {
-    padding: 4rem calc((100vw - 1300px) / 2);
+    padding: 2rem calc((100vw - 1300px) / 2);
   }
 `
 
 const BodyText = styled.p`
   letter-spacing: 0.1px;
   color: #fff;
-  text-align: center;
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1024px) {
     text-align: unset;
   }
 `
 
+// Custom H1 Tag //
 const Header = styled.h1`
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
@@ -47,17 +47,17 @@ const Header = styled.h1`
   }
 `
 
+// Custom List Tag //
 const ListItem = styled.li`
   font-size: 14px;
 `
 
 // BUTTON //
-
 const Button = styled(Link)`
   color: white;
   margin: 0.5rem;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 2px;
   font-family: "Josefin Sans", sans-serif;
   transition: 0.2s ease-out;
   text-decoration: none;
@@ -93,7 +93,7 @@ const ExternalLink = styled.a`
   }
 `
 
-// Footer Elements
+// Footer Elements //
 const FooterText = styled.p`
   color: #4f4f4f;
   font-family: "Rubik", sans-serif;
@@ -116,7 +116,7 @@ const FooterText = styled.p`
   }
 `
 
-// Pre-Styled HTML Footer Tag
+// Pre-Styled HTML Footer Tag //
 const FooterTag = styled.footer`
   background-color: #61f4de;
   padding: 2rem calc((100vw - 1366px) / 2);

@@ -24,6 +24,12 @@ const EmailLinkStyling = css`
   }
 `
 
+const EmailTextStyling = css`
+  @media screen and (max-width: 1024px) {
+    text-align: center;
+  }
+`
+
 const SecondPage = () => {
   let title = useRef(null)
   let subtitle = useRef(null)
@@ -79,8 +85,8 @@ const SecondPage = () => {
               @media screen and (min-width: 768px) {
                 margin-top: 2rem;
               }
-              @media screen and (min-width: 1440px) {
-                margin-top: unset;
+              @media screen and (min-width: 1024px) {
+                margin-top: 0;
                 text-align: left;
               }
             `}
@@ -88,7 +94,7 @@ const SecondPage = () => {
           >
             My Projects
           </Header>
-          <BodyText ref={el => (subtitle = el)}>
+          <BodyText css={EmailTextStyling} ref={el => (subtitle = el)}>
             Here are a few projects I've worked on recently. Want to see more?{" "}
             <a css={EmailLinkStyling} href="mailto:andrewndhlovu55@gmail.com">
               Email me.

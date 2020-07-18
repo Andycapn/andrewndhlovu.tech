@@ -43,7 +43,7 @@ const Contact = () => {
         <MainDiv>
           <section
             style={{
-              maxWidth: "1000px",
+              maxWidth: "1440px",
               marginLeft: "auto",
               marginRight: "auto",
             }}
