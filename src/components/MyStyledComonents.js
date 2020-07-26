@@ -13,9 +13,13 @@ const ImageBackground = styled(BackgroundImage)`
 // Page Elements //
 
 const MainDiv = styled.main`
+  /* Sets Responsive Margin for Main Page Container */
   padding: 5vh calc((100vw - 345px) / 2) 0.5rem;
   @media screen and (min-width: 425px) {
     padding: 0.7rem calc((100vw - 400px) / 2);
+  }
+  @media screen and (min-width: 600px) {
+    padding: 0.5rem calc((100vw - 580px) / 2);
   }
   @media screen and (min-width: 768px) {
     padding: 0.5rem calc((100vw - 750px) / 2);
@@ -45,7 +49,7 @@ const Header = styled.h1`
   font-family: "Josefin Sans", sans-serif;
   color: #fff;
   @media screen and (min-width: 1440px) {
-    font-size: 75px;
+    font-size: 40px;
     text-align: unset;
   }
 `

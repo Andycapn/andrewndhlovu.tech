@@ -86,7 +86,7 @@ const SecondPage = () => {
                 margin-top: 2rem;
               }
               @media screen and (min-width: 1024px) {
-                margin-top: 0;
+                margin-top: 2rem;
                 text-align: left;
               }
             `}

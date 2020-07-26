@@ -65,17 +65,15 @@ const About = () => {
               max-width: 1400px;
               margin-left: auto;
               margin-right: auto;
-
-              /* Setting A Right Padding on Larger Displays. */
             `}
           >
             <Header
               css={css`
+                @media screen and (min-width: 325px) {
+                  margin-top: 1.5rem;
+                }
                 @media screen and (min-width: 768px) {
                   margin-top: 2rem;
-                }
-                @media screen and (min-width: 1440px) {
-                  margin-top: unset;
                 }
               `}
             >
