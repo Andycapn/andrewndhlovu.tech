@@ -50,14 +50,7 @@ const Contact = () => {
           >
             <Header
               css={css`
-                @media screen and (min-width: 768px) {
-                  /* Top Margin for Medium Sized Laptops */
-                  margin-top: 2rem;
-                }
-                @media screen and (min-width: 1440px) {
-                  /* Remove Top Margin on Large Displays */
-                  margin-top: unset;
-                }
+                margin-top: 2rem;
               `}
             >
               Contact Me
