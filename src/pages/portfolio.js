@@ -82,11 +82,8 @@ const SecondPage = () => {
           <Header
             css={css`
               text-align: center;
-              @media screen and (min-width: 768px) {
-                margin-top: 2rem;
-              }
+              margin-top: 2rem;
               @media screen and (min-width: 1024px) {
-                margin-top: 2rem;
                 text-align: left;
               }
             `}
