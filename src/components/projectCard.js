@@ -43,7 +43,7 @@ const ProjectCard = props => {
             href={props.codeLink}
             minimal
             outlined
-            intent="primary"
+            intent="success"
             icon={`code`}
             target="_blank"
             disabled={props.codeDisabled}
@@ -54,7 +54,7 @@ const ProjectCard = props => {
             href={props.demoLink}
             minimal
             outlined
-            intent="primary"
+            intent="success"
             icon={`application`}
             target="_blank"
             disabled={props.disabled}

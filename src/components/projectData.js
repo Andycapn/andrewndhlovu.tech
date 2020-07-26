@@ -2,6 +2,7 @@ import nkobaProj from "../images/nkoba.png"
 import gameProj from "../images/game.png"
 import houseProj from "../images/housekeepr.png"
 import Probusiness from "../images/probusiness.png"
+import MyChows from "../images/mychows.png"
 
 export const projectsArray = [
   {
@@ -24,6 +25,15 @@ export const projectsArray = [
   },
   {
     id: 3,
+    title: "Chows Asian Bistro",
+    desc:
+      "Redesigned WordPress site for Chow's, an Asian Bistro in Albuquerque, New Mexico.",
+    img: MyChows,
+    codeDisabled: true,
+    demoLink: "https://mychows.com",
+  },
+  {
+    id: 4,
     title: "HouseKeepr",
     desc:
       "Housekeeping application for conducting inspections. Built using React and NodeJS.",
@@ -33,7 +43,7 @@ export const projectsArray = [
     codeDisabled: true,
   },
   {
-    id: 4,
+    id: 5,
     title: "JavaScript Game",
     desc:
       "This is a game that I built as part of my 'Intro To Programming' course. It is built using JavaScript and the p5.JS library. This project gave me a solid foundation on which to build my JavaScript expertise.",
