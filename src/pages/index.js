@@ -83,7 +83,10 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title="Home"
+        description="Experienced Web and Software Developer based in Lusaka Zambia"
+      />
       <ImageBackground
         tag={`section`}
         fluid={BackgroundImages}
@@ -130,6 +133,7 @@ const IndexPage = () => {
                 }
               `}
               ref={el => (body1 = el)}
+              className="typing"
             >
               I build interesting and innovative online experiences. Click below
               to learn more or see some of my work.
