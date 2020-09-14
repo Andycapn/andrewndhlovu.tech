@@ -31,7 +31,7 @@ const MainDiv = styled.main`
     padding: 2.2rem calc((100vw - 1280px) / 2);
   }
   @media screen and (min-width: 1440px) {
-    padding: 2rem calc((100vw - 1300px) / 2);
+    padding: 2rem calc((100vw - 1500px) / 2);
   }
 `
 
@@ -76,7 +76,7 @@ const Button = styled(Link)`
 
 // EXTERNAL LINK //
 const ExternalLink = styled.a`
-  color: #4f4f4f;
+  color: #eee;
   font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: normal;
@@ -102,7 +102,7 @@ const ExternalLink = styled.a`
 
 // Footer Elements //
 const FooterText = styled.p`
-  color: #4f4f4f;
+  color: #eee;
   font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: normal;
@@ -125,7 +125,7 @@ const FooterText = styled.p`
 
 // Pre-Styled HTML Footer Tag //
 const FooterTag = styled.footer`
-  background-color: #61f4de;
+  background-color: #6b778d;
   padding: 2rem calc((100vw - 1366px) / 2);
 
   @media only screen and (min-width: 800px) {

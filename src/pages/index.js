@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -6,19 +6,17 @@ import "../custom.scss"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import { Power3, TimelineLite } from "gsap"
-import BackgroundImage from "gatsby-background-image"
+import Illustration from "../images/hello.svg"
 import {
   BodyText,
   Header,
   Button,
   MainDiv,
 } from "../components/MyStyledComonents"
+import Particles from 'react-particles-js';
 
-const ImageBackground = styled(BackgroundImage)`
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-`
+
+
 
 const ButtonStyling = {
   buttonOne: css`
@@ -38,6 +36,14 @@ const ButtonStyling = {
     }
   `,
 }
+
+const MainLayoutStyling = styled(MainDiv)`
+  display: grid;
+  grid-gap: 45px;
+  place-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 720px));
+  
+`
 
 const IndexPage = () => {
   let heading1 = useRef(null)
@@ -62,24 +68,8 @@ const IndexPage = () => {
       .paused()
   }, [tl])
 
-  const { image } = useStaticQuery(graphql`
-    query {
-      image: file(relativePath: { eq: "home-bg.jpg" }) {
-        sharp: childImageSharp {
-          fluid(quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `)
 
-  // Overlay Background Image with Gradient
-  const BackgroundImages = [
-    image.sharp.fluid,
-    `linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.7) 100%)`,
-    `linear-gradient(176deg, rgba(108,141,250,1) 0%, rgba(104,182,239,0.29) 58%, rgba(97,244,222,1) 100%)`,
-  ].reverse()
+
 
   return (
     <Layout>
@@ -87,72 +77,90 @@ const IndexPage = () => {
         title="Home"
         description="Experienced Web and Software Developer based in Lusaka Zambia"
       />
-      <ImageBackground
-        tag={`section`}
-        fluid={BackgroundImages}
-        css={css`
-          background-color: #0b132b;
-          opacity: 0;
-          min-height: 100vh;
-        `}
+      <Particles
+          height={"105vh"}
+          params={{
+        background: {
+          color: {
+            value: "#0b2145",
+          },
+        },
+        particles: {
+          shape: {
+            type: "circle",
+
+          }
+        },
+        interactivity: {
+          enabled: true,
+          detectsOn: "canvas",
+          modes: {
+            repulse: true
+          }
+        }
+      }} style={{position: "absolute", top: "0", left: "0", zIndex: "+1"}}/>
+      <MainLayoutStyling
+        style={{ height: "100vh", background: "none"}}
       >
-        <MainDiv style={{ height: "100vh" }}>
-          <div
+
+        <div
+          css={css`
+            position: relative;
+            top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: +2;
+        
+            @media screen and (min-width: 1440px) {
+              align-items: unset;
+            }
+          `}
+        >
+          <Header
             css={css`
-              position: relative;
-              top: 50px;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              @media screen and (min-width: 768px) {
-                top: 150px;
+              @media screen and (max-width: 2560px) {
+                font-size: 110px;
               }
-              @media screen and (min-width: 1440px) {
-                align-items: unset;
+              @media screen and (max-width: 1024px) {
+                font-size: 80px;
               }
             `}
+            ref={el => (heading1 = el)}
           >
-            <Header
-              css={css`
-                @media screen and (max-width: 2560px) {
-                  font-size: 100px;
-                }
-                @media screen and (max-width: 1024px) {
-                  font-size: 80px;
-                }
-              `}
-              ref={el => (heading1 = el)}
+            Hi, My name is Andrew.
+          </Header>
+          <BodyText
+            css={css`
+              max-width: 700px;
+              @media screen and (max-width: 1366px) {
+                text-align: center;
+              }
+            `}
+            ref={el => (body1 = el)}
+            className="typing"
+          >
+            I build interesting and innovative online experiences. Click below
+            to learn more or see some of my work.
+          </BodyText>
+          <span>
+            <Button
+              css={ButtonStyling.buttonOne}
+              to={`/portfolio`}
+              style={{ marginLeft: "0" }}
             >
-              Hi, My name is Andrew.
-            </Header>
-            <BodyText
-              css={css`
-                max-width: 700px;
-                @media screen and (max-width: 1366px) {
-                  text-align: center;
-                }
-              `}
-              ref={el => (body1 = el)}
-              className="typing"
-            >
-              I build interesting and innovative online experiences. Click below
-              to learn more or see some of my work.
-            </BodyText>
-            <span>
-              <Button
-                css={ButtonStyling.buttonOne}
-                to={`/portfolio`}
-                style={{ marginLeft: "0" }}
-              >
-                View Portfolio
-              </Button>
-              <Button css={ButtonStyling.buttonTwo} to={`/about`}>
-                About Me
-              </Button>
-            </span>
-          </div>
-        </MainDiv>
-      </ImageBackground>
+              View Portfolio
+            </Button>
+            <Button css={ButtonStyling.buttonTwo} to={`/about`}>
+              About Me
+            </Button>
+          </span>
+        </div>
+        <div style={{zIndex: "+3"}}>
+          <img src={Illustration} alt=""/>
+        </div>
+      </MainLayoutStyling>
+
     </Layout>
   )
 }
