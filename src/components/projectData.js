@@ -16,24 +16,6 @@ export const projectsArray = [
   },
   {
     id: 2,
-    title: "Probusiness Group Landing Page",
-    desc:
-      "Redesigned the landing page for Probusiness Group Inc an advertising agency based in Albuquerque, New Mexico.",
-    img: Probusiness,
-    codeDisabled: true,
-    demoLink: "https://probusinessgroupinc.com",
-  },
-  {
-    id: 3,
-    title: "Chows Asian Bistro",
-    desc:
-      "Redesigned WordPress site for Chow's, an Asian Bistro in Albuquerque, New Mexico.",
-    img: MyChows,
-    codeDisabled: true,
-    demoLink: "https://mychows.com",
-  },
-  {
-    id: 4,
     title: "HouseKeepr",
     desc:
       "Housekeeping application for conducting inspections. Built using React and NodeJS. DEMO COMING SOON",
@@ -42,6 +24,24 @@ export const projectsArray = [
     demoDisabled: true,
     codeDisabled: false,
     viewMore: true,
+  },
+  {
+    id: 3,
+    title: "Probusiness Group Landing Page",
+    desc:
+      "Redesigned the landing page for Probusiness Group Inc an advertising agency based in Albuquerque, New Mexico.",
+    img: Probusiness,
+    codeDisabled: true,
+    demoLink: "https://probusinessgroupinc.com",
+  },
+  {
+    id: 4,
+    title: "Chows Asian Bistro",
+    desc:
+      "Redesigned WordPress site for Chow's, an Asian Bistro in Albuquerque, New Mexico.",
+    img: MyChows,
+    codeDisabled: true,
+    demoLink: "https://mychows.com",
   },
   {
     id: 5,
