@@ -36,11 +36,12 @@ export const projectsArray = [
     id: 4,
     title: "HouseKeepr",
     desc:
-      "Housekeeping application for conducting inspections. Built using React and NodeJS.",
+      "Housekeeping application for conducting inspections. Built using React and NodeJS. DEMO COMING SOON",
     img: houseProj,
     githubLink: "https://github.com/Andycapn/housekeepr.git",
     demoDisabled: true,
     codeDisabled: false,
+    viewMore: true,
   },
   {
     id: 5,
