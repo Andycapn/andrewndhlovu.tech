@@ -12,7 +12,7 @@ export const projectsArray = [
       "A website for a local marketing agency. Built using GatsbyJS an SSR that's built on top of the ReactJS library.",
     img: nkobaProj,
     githubLink: "https://github.com/Andycapn/nkoba-digital",
-    demoLink: "https://nkoba.demo.andrewndhlovu.tech",
+    demoLink: "https://nkobadigital.online/",
   },
   {
     id: 2,
