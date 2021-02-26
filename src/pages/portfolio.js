@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { css } from "@emotion/core"
+import {css} from "@emotion/react"
 
 import {
   Header,

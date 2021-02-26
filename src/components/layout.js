@@ -1,5 +1,5 @@
 import React from "react"
-import { css } from "@emotion/core"
+import {css} from "@emotion/react"
 import Footer from "./footer"
 import Header from "./header"
 import "./layout.css"

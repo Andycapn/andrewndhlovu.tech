@@ -1,90 +1,206 @@
-import { graphql, Link, useStaticQuery } from "gatsby"
-import React from "react"
-import "@blueprintjs/core/lib/css/blueprint.css"
-import { Navbar, Nav } from "react-bootstrap"
-import styled from "@emotion/styled"
-import { css } from "@emotion/core"
+import { Link } from "gatsby"
+import PropTypes from "prop-types"
+import React, { useState } from "react"
+import { css } from "@emotion/react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 
-const NavLink = styled(Link)`
-  font-family: "Rubik", sans-serif;
-  font-size: small;
 
-  &.nav-link {
-    padding-left: 1em;
-    padding-right: 1em;
+const Header = ({ siteTitle }) => {
+  const [state, setState] = useState({
+    drawerOpen: false,
+  })
+  const handleDrawerToggle = () => {
+    setState(prevState => {
+      return { drawerOpen: !prevState.drawerOpen }
+    })
   }
-`
-
-const LogoStyling = css`
-  width: 140px;
-  margin: -100px 0;
-`
-
-const Header = () => {
-  //Image Queries.
-  const { Logo } = useStaticQuery(graphql`
-    query {
-      Logo: file(relativePath: { eq: "Andrew Ndhlovu.png" }) {
-        sharp: childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `)
+  const handleBackdropClick = () => {
+    setState({ drawerOpen: false })
+  }
 
   return (
-    <Navbar
-      bg="nav-bar"
-      expand="lg"
-      fixed="top"
+    <header
       css={css`
-        box-shadow: 0px 0.2px 10px -4px rgba(0, 0, 0, 0.75);
-        @media screen and (min-width: 1024px) {
-          padding: 0.5rem calc((100vw - 960px) / 2);
+        & > .sidebar {
+          position: fixed;
+          top: 0;
+          width: 85%;
+          height: 100%;
+          background-color: white;
+          z-index: 200;
+          display: flex;
+          flex-direction: column;
+          transform: translateX(-100%);
+          transition: 200ms ease-out;
+          padding: 2rem;
+          & > .close-icon {
+            cursor: pointer;
+            margin-left: auto;
+          }
+          & > .nav-items {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            & > .nav-item {
+              font-family: "Rubik", sans-serif;
+              list-style: none;
+              font-weight: 400;
+              letter-spacing: 1.5px;
+              font-size: 14px;
+              margin: 10px 0;
+            }
+          }
+
+          a {
+            text-decoration: none;
+            color: black;
+          }
         }
-        @media screen and (min-width: 1440px) {
-          padding: 0.5rem calc((100vw - 1300px) / 2);
+        & > .sidebar.open {
+          transform: translateX(0px);
+        }
+        & > .backdrop {
+          display: none;
+          z-index: 100;
+          position: fixed;
+          top: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.7);
+          height: 100%;
+          width: 100%;
+          opacity: 0;
+          transition: 300ms ease-in;
+        }
+        & > .backdrop.open {
+          display: block;
+          opacity: 1;
         }
       `}
-      className="navbar-dark"
     >
-      <Link
-        to="/"
-        style={{ fontFamily: '"Josefin Sans", sans-serif' }}
-        className="navbar-brand"
-      >
-        <img css={LogoStyling} src={Logo.sharp.fluid.src} alt="" />
-      </Link>
-      <Navbar.Toggle
-        aria-controls="basic-navbar-nav"
+      <nav
         css={css`
-          color: black;
-          border: none;
+          z-index: 100;
+          position: fixed;
+          top: 0;
+          display: flex;
+          width: 100vw;
+          max-height: 7vh;
+          align-items: center;
+          background-color: white;
+          & > .nav-items {
+            display: none;
+          }
+          & > .hamburger {
+            margin-left: auto;
+            color: black;
+          }
+          & > .logo {
+            color: black;
+            text-decoration: none;
+            font-family: "Josefin Sans", sans-serif;
+            letter-spacing: 2px;
+            font-weight: bold;
+            font-size: 13px;
+          }
+          padding: 0.5rem calc((100vw - 345px) / 2) 0.5rem;
+          @media screen and (min-width: 425px) {
+            padding: 0.7rem calc((100vw - 400px) / 2);
+          }
+          @media screen and (min-width: 600px) {
+            padding: 0.5rem calc((100vw - 580px) / 2);
+          }
+          @media screen and (min-width: 768px) {
+            padding: 0.5rem calc((100vw - 750px) / 2);
+            & > .hamburger {
+              display: none;
+            }
+            & > .nav-items {
+              margin-left: auto;
+              margin-bottom: 0;
+              display: flex;
+              & > .nav-item {
+                 font-family: "Rubik", sans-serif;
+                list-style: none;
+                font-weight: 400;
+                letter-spacing: 2px;
+                font-size: 13px;
+                margin: 0 10px;
+              }
+              a {
+                text-decoration: none;
+                color: black;
+              }
+            }
+            & > .logo {
+              font-size: 16px;
+            }
+          }
+          @media screen and (min-width: 1024px) {
+            padding: 1rem calc((100vw - 960px) / 2);
+          }
+          @media screen and (min-width: 1366px) {
+            padding: 1rem calc((100vw - 1280px) / 2);
+          }
+          @media screen and (min-width: 1440px) {
+            padding: 1.5rem calc((100vw - 1300px) / 2);
+          }
         `}
-      />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto" variant="pills">
-          <NavLink className="nav-link" activeClassName="active" to="/">
+      >
+        <Link to="/" className="logo">
+          ANDREW NDHLOVU
+        </Link>
+        <FontAwesomeIcon
+          icon={faBars}
+          color={"white"}
+          className="hamburger"
+          size={"lg"}
+          onClick={handleDrawerToggle}
+        />
+        <ul className="nav-items">
+          <Link to="/" className="nav-item">
             Home
-          </NavLink>
-          <NavLink
-            className="nav-link"
-            activeClassName="active"
-            to="/portfolio"
-          >
+          </Link >
+          <Link to="/portfolio" className="nav-item">
             Portfolio
-          </NavLink>
-          <NavLink className="nav-link" activeClassName="active" to="/about">
-            About
-          </NavLink>
-          <NavLink className="nav-link" activeClassName="active" to="/contact">
+          </Link>
+          <Link to="/about" className="nav-item">
+            About Me
+          </Link>
+          <Link to="/contact" className="nav-item">
             Contact Me
-          </NavLink>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+          </Link>
+        </ul>
+      </nav>
+      <div className={`sidebar ${state.drawerOpen ? "open" : ""}`}>
+        <FontAwesomeIcon
+          icon={faTimes}
+          size={"lg"}
+          className="close-icon"
+          onClick={handleDrawerToggle}
+          color={"black"}
+        />
+        <ul className="nav-items">
+          <Link to="/" className="nav-item">
+            Home
+          </Link >
+          <Link to="/portfolio" className="nav-item">
+            Portfolio
+          </Link>
+          <Link to="/about" className="nav-item">
+            About Me
+          </Link>
+          <Link to="/contact" className="nav-item">
+            Contact Me
+          </Link>
+        </ul>
+      </div>
+      <div
+        className={`backdrop ${state.drawerOpen ? "open" : ""}`}
+        onClick={handleBackdropClick}
+      />
+    </header>
   )
 }
 

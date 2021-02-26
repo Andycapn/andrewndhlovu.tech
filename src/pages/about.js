@@ -9,7 +9,7 @@ import {
   BodyText,
   ListItem,
 } from "../components/MyStyledComonents"
-import { css } from "@emotion/core"
+import {css} from "@emotion/react"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
 import { Jumbotron } from "react-bootstrap"

@@ -1,6 +1,6 @@
 import React from "react"
 import { Card } from "react-bootstrap"
-import { css } from "@emotion/core"
+import {css} from "@emotion/react"
 import { AnchorButton } from "@blueprintjs/core"
 import styled from "@emotion/styled"
 

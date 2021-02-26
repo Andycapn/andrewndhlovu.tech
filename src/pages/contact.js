@@ -7,7 +7,7 @@ import {
   MainDiv,
   Header,
 } from "../components/MyStyledComonents"
-import { css } from "@emotion/core"
+import {css} from "@emotion/react"
 import SEO from "../components/seo"
 import { Form, Button } from "react-bootstrap"
 
