@@ -3,6 +3,15 @@ import Image from "./image"
 export const projectsArray = () => {
   return [
     {
+      id: 6,
+      title: "Urbanwear Clothing",
+      desc:
+        "Demo eCommerce Website built using GatsbyJS and React, and consumes data from a Shopify GraphQL API ",
+      img: Image().urbanWear,
+      githubLink: "https://github.com/Andycapn/urbanwear.com",
+      demoLink: "https://urbanwear-demo.andrewndhlovu.me/",
+    },
+    {
       id: 1,
       title: "Nkoba Digital",
       desc:

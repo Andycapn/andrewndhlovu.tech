@@ -10,6 +10,7 @@ const Image = () => {
     nkoba,
     proBusiness,
     game,
+    urbanWear,
   } = useStaticQuery(graphql`
     query {
       bannerImage: file(relativePath: { eq: "bannerImage.png" }) {
@@ -54,10 +55,25 @@ const Image = () => {
           }
         }
       }
+      urbanWear: file(relativePath: { eq: "urbanwear.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
-  return { bannerImage, houseKeepr, myChows, game, nkoba, proBusiness }
+  return {
+    bannerImage,
+    houseKeepr,
+    myChows,
+    game,
+    nkoba,
+    proBusiness,
+    urbanWear,
+  }
 }
 
 export default Image

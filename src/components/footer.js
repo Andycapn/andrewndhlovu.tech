@@ -1,12 +1,16 @@
 import React from "react"
-import {css} from "@emotion/react"
+import { css } from "@emotion/react"
 import Icons from "./icons"
 import { ExternalLink, FooterText, FooterTag } from "./MyStyledComonents"
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
 const Footer = () => {
   return (
     <FooterTag
       css={css`
+        padding-top: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -23,21 +27,13 @@ const Footer = () => {
         `}
       >
         <li style={{ display: "flex", alignItems: "center" }}>
-          <img
-            style={{ width: "25px", height: "25px", marginBottom: "0" }}
-            src={Icons.githubIcon}
-            alt=""
-          />
+          <FontAwesomeIcon size="2x" icon={faGithub} color="white" />
           <ExternalLink href="https://github.com/andycapn" target="_blank">
             GitHub
           </ExternalLink>
         </li>
         <li style={{ display: "flex", alignItems: "center" }}>
-          <img
-            style={{ width: "25px", height: "25px", marginBottom: "0" }}
-            src={Icons.linkedInIcon}
-            alt=""
-          />
+          <FontAwesomeIcon size="2x" icon={faLinkedin} color="white" />
           <ExternalLink
             href="https://www.linkedin.com/in/andrew-ndhlovu"
             target="_blank"
@@ -47,11 +43,7 @@ const Footer = () => {
           </ExternalLink>
         </li>
         <li style={{ display: "flex", alignItems: "center" }}>
-          <img
-            style={{ width: "25px", height: "25px", marginBottom: "0" }}
-            src={Icons.mailIcon}
-            alt=""
-          />
+          <FontAwesomeIcon size="2x" icon={faEnvelope} color="white" />
           <ExternalLink
             href="mailto:andrew@andrewndhlovu.tech"
             target="_blank"

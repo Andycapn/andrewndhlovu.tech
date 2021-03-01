@@ -40,7 +40,7 @@ const ProjectItem = props => {
           @media screen and (min-width: 768px) {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 46%));
-            grid-gap: 40px;
+            grid-gap: 8%;
             margin: unset;
           }
         `}

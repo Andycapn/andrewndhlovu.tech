@@ -15,6 +15,15 @@ import Image from "../components/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
+const buttonStyling = css`
+  background: black;
+  color: white;
+  font-size: 16px;
+  @media screen and (min-width: 768px) {
+    font-size: unset;
+  }
+`
+
 const IndexPage = () => {
   let heading1 = useRef(null)
   let body1 = useRef(null)
@@ -97,7 +106,7 @@ const IndexPage = () => {
             I build interesting and innovative online experiences. Click below
             to learn more or see some of my work.
             <div className="btn-container">
-              <Button to="/portfolio" style={{ backgroundColor: "black" }}>
+              <Button to="/portfolio" css={buttonStyling}>
                 <span>
                   View My Portfolio{" "}
                   <FontAwesomeIcon
@@ -106,13 +115,7 @@ const IndexPage = () => {
                   />
                 </span>
               </Button>
-              <Button
-                to="/about"
-                style={{
-                  backgroundColor: "black",
-                  color: "white",
-                }}
-              >
+              <Button to="/about" css={buttonStyling}>
                 <span>
                   Learn More{" "}
                   <FontAwesomeIcon
