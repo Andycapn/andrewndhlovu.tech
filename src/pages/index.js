@@ -12,6 +12,8 @@ import {
 } from "../components/MyStyledComonents"
 import Img from "gatsby-image"
 import Image from "../components/image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 const IndexPage = () => {
   let heading1 = useRef(null)
@@ -95,17 +97,29 @@ const IndexPage = () => {
             I build interesting and innovative online experiences. Click below
             to learn more or see some of my work.
             <div className="btn-container">
-              <Button href="#" style={{ backgroundColor: "black" }}>
-                View My Portfolio
+              <Button to="/portfolio" style={{ backgroundColor: "black" }}>
+                <span>
+                  View My Portfolio{" "}
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    style={{ margin: "0 5px" }}
+                  />
+                </span>
               </Button>
               <Button
-                href="#"
+                to="/about"
                 style={{
                   backgroundColor: "black",
                   color: "white",
                 }}
               >
-                <span>Learn More</span>
+                <span>
+                  Learn More{" "}
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    style={{ margin: "0 5px" }}
+                  />
+                </span>
               </Button>
             </div>
           </BodyText>
