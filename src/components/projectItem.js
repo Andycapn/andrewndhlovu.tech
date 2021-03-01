@@ -1,70 +1,45 @@
 import React from "react"
-import { Card } from "react-bootstrap"
-import {css} from "@emotion/react"
-import { AnchorButton } from "@blueprintjs/core"
-import styled from "@emotion/styled"
+import { css } from "@emotion/react"
+import Img from "gatsby-image"
+import { BodyText } from "./MyStyledComonents"
 
-const MyButton = styled(AnchorButton)`
-  font-family: "Josefin Sans", sans-serif;
-`
-
-const Text = styled.p`
-  font-family: "Rubik", sans-serif;
-  line-height: 1.4;
-  font-size: 16px;
-`
-
-const ProjectCard = props => {
+const ProjectItem = props => {
   return (
     <>
-      <Card
+      <div
         css={css`
-          margin: 1.5em 0 1.5em 0;
-          box-shadow: 0px 0px 118px -29px rgba(0, 0, 0, 0.75);
-          @media screen and (min-width: 768px) {
-            margin: 1em;
+          width: 100%;
+          margin: 100px 0;
+          .column.image {
+            width: 100%;
+            box-shadow: 1px 1px 17px 0px rgba(0, 0, 0, 0.32);
+            border-radius: 4px;
+            .img {
+              border-radius: 4px;
+            }
           }
-          @media screen and (min-width: 1024px) {
-            width: 21rem;
+          .column.content > h1 {
+            font-size: 24px;
+            font-family: "Josefin sans", sans-serif;
+          }
+          @media screen and (min-width: 768px) {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 46%));
+            grid-gap: 40px;
+            margin: unset;
           }
         `}
       >
-        <img className="card-img" src={props.img} alt="" />
-        <Card.Body>
-          <Card.Title
-            css={css`
-              font-family: "Josefin Sans", sans-serif;
-            `}
-          >
-            {props.title}
-          </Card.Title>
-          <Text className="card-text">{props.desc}</Text>
-          <MyButton
-            href={props.codeLink}
-            minimal
-            outlined
-            intent="success"
-            icon={`code`}
-            target="_blank"
-            disabled={props.codeDisabled}
-          >
-            View Code
-          </MyButton>{" "}
-          <MyButton
-            href={props.demoLink}
-            minimal
-            outlined
-            intent="success"
-            icon={`application`}
-            target="_blank"
-            disabled={props.disabled}
-          >
-            Demo
-          </MyButton>
-        </Card.Body>
-      </Card>
+        <div className="column content">
+          <h1>{props.title}</h1>
+          <BodyText>{props.desc}</BodyText>
+        </div>
+        <div className="column image">
+          <Img className="img" fluid={props.img.childImageSharp.fluid} />
+        </div>
+      </div>
     </>
   )
 }
 
-export default ProjectCard
+export default ProjectItem

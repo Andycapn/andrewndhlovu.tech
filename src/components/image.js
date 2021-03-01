@@ -2,23 +2,54 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-/*
- * This component is built using `gatsby-image` to automatically serve optimized
- * images with lazy loading and reduced file sizes. The image is loaded using a
- * `useStaticQuery`, which allows us to load the image from directly within this
- * component, rather than having to pass the image data down from pages.
- *
- * For more information, see the docs:
- * - `gatsby-image`: https://gatsby.dev/gatsby-image
- * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 const Image = () => {
-  const data = useStaticQuery(graphql`
+  const {
+    bannerImage,
+    houseKeepr,
+    myChows,
+    nkoba,
+    proBusiness,
+    game,
+  } = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      bannerImage: file(relativePath: { eq: "bannerImage.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      houseKeepr: file(relativePath: { eq: "housekeepr.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      myChows: file(relativePath: { eq: "mychows.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      nkoba: file(relativePath: { eq: "nkoba.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      proBusiness: file(relativePath: { eq: "probusiness.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      game: file(relativePath: { eq: "game.png" }) {
+        childImageSharp {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }
@@ -26,7 +57,7 @@ const Image = () => {
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return { bannerImage, houseKeepr, myChows, game, nkoba, proBusiness }
 }
 
 export default Image

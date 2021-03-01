@@ -37,7 +37,8 @@ const MainDiv = styled.main`
 
 const BodyText = styled.p`
   letter-spacing: 0.1px;
-  color: #fff;
+  color: black;
+  font-family: "Open Sans", sans-serif;
   @media screen and (min-width: 1024px) {
     text-align: unset;
   }
@@ -47,7 +48,7 @@ const BodyText = styled.p`
 const Header = styled.h1`
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
-  color: #fff;
+  color: black;
   @media screen and (min-width: 1440px) {
     font-size: 40px;
     text-align: unset;
@@ -62,8 +63,7 @@ const ListItem = styled.li`
 // BUTTON //
 const Button = styled(Link)`
   color: white;
-  margin: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1rem;
   border-radius: 2px;
   font-family: "Josefin Sans", sans-serif;
   transition: 0.2s ease-out;
@@ -127,7 +127,6 @@ const FooterText = styled.p`
 const FooterTag = styled.footer`
   background-color: #61f4de;
   padding: 2rem calc((100vw - 1366px) / 2);
-
   @media only screen and (min-width: 800px) {
     padding: 2rem calc((100vw - 1366px) / 2);
     display: grid;

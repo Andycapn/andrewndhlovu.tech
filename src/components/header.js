@@ -5,7 +5,6 @@ import { css } from "@emotion/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 
-
 const Header = ({ siteTitle }) => {
   const [state, setState] = useState({
     drawerOpen: false,
@@ -86,7 +85,7 @@ const Header = ({ siteTitle }) => {
           top: 0;
           display: flex;
           width: 100vw;
-          max-height: 7vh;
+          height: 8vh;
           align-items: center;
           background-color: white;
           & > .nav-items {
@@ -113,6 +112,7 @@ const Header = ({ siteTitle }) => {
           }
           @media screen and (min-width: 768px) {
             padding: 0.5rem calc((100vw - 750px) / 2);
+            max-height: 7vh;
             & > .hamburger {
               display: none;
             }
@@ -121,11 +121,12 @@ const Header = ({ siteTitle }) => {
               margin-bottom: 0;
               display: flex;
               & > .nav-item {
-                 font-family: "Rubik", sans-serif;
+                font-family: "Open Sans", sans-serif;
+                font-weight: bold;
                 list-style: none;
-                font-weight: 400;
                 letter-spacing: 2px;
                 font-size: 13px;
+                text-transform: uppercase;
                 margin: 0 10px;
               }
               a {
@@ -161,7 +162,7 @@ const Header = ({ siteTitle }) => {
         <ul className="nav-items">
           <Link to="/" className="nav-item">
             Home
-          </Link >
+          </Link>
           <Link to="/portfolio" className="nav-item">
             Portfolio
           </Link>
@@ -184,7 +185,7 @@ const Header = ({ siteTitle }) => {
         <ul className="nav-items">
           <Link to="/" className="nav-item">
             Home
-          </Link >
+          </Link>
           <Link to="/portfolio" className="nav-item">
             Portfolio
           </Link>
