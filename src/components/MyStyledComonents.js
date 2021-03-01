@@ -65,7 +65,7 @@ const Button = styled(Link)`
   color: white;
   padding: 0.5em 1rem;
   border-radius: 2px;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   transition: 0.2s ease-out;
   text-decoration: none;
   &:hover {
