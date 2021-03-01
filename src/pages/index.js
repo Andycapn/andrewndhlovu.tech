@@ -83,12 +83,14 @@ const IndexPage = () => {
           }
           .btn-container {
             display: flex;
-            gap: 20px;
             justify-content: center;
             margin: 20px 0;
           }
+          .btn-container > a:nth-child(2) {
+            margin-left: 20px;
+          }
           @media screen and (min-width: 768px) {
-            grid-template-columns: repeat(auto-fill, minmax(300px, 49%));
+            grid-template-columns: repeat(auto-fill, minmax(48%, 49%));
             place-items: center;
             grid-column-gap: 10px;
             .banner-image {
