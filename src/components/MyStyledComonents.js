@@ -76,7 +76,7 @@ const Button = styled(Link)`
 
 // EXTERNAL LINK //
 const ExternalLink = styled.a`
-  color: white;
+  color: black;
   font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: normal;
@@ -103,7 +103,7 @@ const ExternalLink = styled.a`
 
 // Footer Elements //
 const FooterText = styled.p`
-  color: white;
+  color: black;
   font-family: "Rubik", sans-serif;
   font-size: 14px;
   font-weight: normal;
@@ -126,7 +126,7 @@ const FooterText = styled.p`
 
 // Pre-Styled HTML Footer Tag //
 const FooterTag = styled.footer`
-  background-color: #000000;
+  background-color: #f5f5f7;
   padding: 2rem calc((100vw - 1366px) / 2);
   @media only screen and (min-width: 800px) {
     padding: 2rem calc((100vw - 1366px) / 2);

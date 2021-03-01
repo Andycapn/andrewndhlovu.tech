@@ -27,13 +27,13 @@ const Footer = () => {
         `}
       >
         <li style={{ display: "flex", alignItems: "center" }}>
-          <FontAwesomeIcon size="2x" icon={faGithub} color="white" />
+          <FontAwesomeIcon size="lg" icon={faGithub} color="black" />
           <ExternalLink href="https://github.com/andycapn" target="_blank">
             GitHub
           </ExternalLink>
         </li>
         <li style={{ display: "flex", alignItems: "center" }}>
-          <FontAwesomeIcon size="2x" icon={faLinkedin} color="white" />
+          <FontAwesomeIcon size="lg" icon={faLinkedin} color="black" />
           <ExternalLink
             href="https://www.linkedin.com/in/andrew-ndhlovu"
             target="_blank"
@@ -43,7 +43,7 @@ const Footer = () => {
           </ExternalLink>
         </li>
         <li style={{ display: "flex", alignItems: "center" }}>
-          <FontAwesomeIcon size="2x" icon={faEnvelope} color="white" />
+          <FontAwesomeIcon size="lg" icon={faEnvelope} color="black" />
           <ExternalLink
             href="mailto:andrew@andrewndhlovu.tech"
             target="_blank"
