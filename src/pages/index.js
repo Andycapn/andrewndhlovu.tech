@@ -71,6 +71,9 @@ const IndexPage = () => {
             display: flex;
             justify-content: center;
             margin: 20px 0;
+            //.icon {
+            //  display: none;
+            //}
           }
           .btn-container > a:nth-child(2) {
             margin-left: 20px;
@@ -85,6 +88,9 @@ const IndexPage = () => {
             }
             .btn-container {
               justify-content: unset;
+              .icon {
+                display: unset;
+              }
             }
             .body-text {
               text-align: unset;
@@ -108,10 +114,11 @@ const IndexPage = () => {
             <div className="btn-container">
               <Button to="/portfolio" css={buttonStyling}>
                 <span>
-                  View My Portfolio{" "}
+                  View Portfolio{" "}
                   <FontAwesomeIcon
                     icon={faArrowRight}
                     style={{ margin: "0 5px" }}
+                    className="icon"
                   />
                 </span>
               </Button>
@@ -121,6 +128,7 @@ const IndexPage = () => {
                   <FontAwesomeIcon
                     icon={faArrowRight}
                     style={{ margin: "0 5px" }}
+                    className="icon"
                   />
                 </span>
               </Button>
