@@ -55,6 +55,17 @@ const Header = styled.h1`
   }
 `
 
+const Heading = styled.h1`
+  margin: 2rem 0 4rem 0;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  color: black;
+  @media screen and (min-width: 1440px) {
+    font-size: 40px;
+    text-align: unset;
+  }
+`
+
 // Custom List Tag //
 const ListItem = styled.li`
   font-size: 14px;
@@ -153,4 +164,5 @@ export {
   ImageBackground,
   MainDiv,
   ListItem,
+  Heading,
 }

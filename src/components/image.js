@@ -1,6 +1,4 @@
-import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 
 const Image = () => {
   const {
@@ -11,6 +9,7 @@ const Image = () => {
     proBusiness,
     game,
     urbanWear,
+    teriyaki,
   } = useStaticQuery(graphql`
     query {
       bannerImage: file(relativePath: { eq: "bannerImage.png" }) {
@@ -62,6 +61,13 @@ const Image = () => {
           }
         }
       }
+      teriyaki: file(relativePath: { eq: "teriyaki.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -73,6 +79,7 @@ const Image = () => {
     nkoba,
     proBusiness,
     urbanWear,
+    teriyaki,
   }
 }
 

@@ -1,6 +1,4 @@
-// Gatsby supports TypeScript natively!
-import React, { useRef } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { css } from "@emotion/react"
@@ -8,45 +6,7 @@ import { Header, BodyText, MainDiv } from "../components/MyStyledComonents"
 import ProjectItem from "../components/projectItem"
 import { projectsArray } from "../components/projectData"
 
-const EmailLinkStyling = css`
-  color: #4cdcc1;
-  transition: 200ms ease-in;
-  &:hover {
-    color: #42bda9;
-  }
-`
-
-const EmailTextStyling = css`
-  @media screen and (max-width: 1024px) {
-    text-align: center;
-  }
-`
-
-const SecondPage = () => {
-  let title = useRef(null)
-  let subtitle = useRef(null)
-  let cards = useRef([])
-
-  //Image Queries.
-  const { background } = useStaticQuery(graphql`
-    query {
-      background: file(relativePath: { eq: "portfolio-bg.jpg" }) {
-        childImageSharp {
-          fluid(quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `)
-
-  // Overlay Background Image with Gradient
-  const BackgroundImages = [
-    background.childImageSharp.fluid,
-    `linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.7) 100%)`,
-    `linear-gradient(176deg, rgba(104,182,239,1) 0%, rgba(108,141,250,0.3) 57%, rgba(97,244,222,1) 100%)`,
-  ].reverse()
-
+const Portfolio = () => {
   return (
     <Layout>
       <SEO title="My Projects" />
@@ -54,23 +14,32 @@ const SecondPage = () => {
       <MainDiv
         css={css`
           min-height: 100vh;
-        `}
-      >
-        <Header
-          css={css`
+
+          .heading {
             text-align: center;
             margin-top: 2rem;
             @media screen and (min-width: 1024px) {
               text-align: left;
             }
-          `}
-          ref={el => (title = el)}
-        >
-          My Projects
-        </Header>
-        <BodyText css={EmailTextStyling} ref={el => (subtitle = el)}>
+          }
+          .email-text {
+            @media screen and (max-width: 1024px) {
+              text-align: center;
+            }
+          }
+          .email-link {
+            color: #4cdcc1;
+            transition: 200ms ease-in;
+            &:hover {
+              color: #42bda9;
+            }
+          }
+        `}
+      >
+        <Header className="heading">My Projects</Header>
+        <BodyText className="email-text">
           Here are a few projects I've worked on recently. Want to see more?{" "}
-          <a css={EmailLinkStyling} href="mailto:andrewndhlovu55@gmail.com">
+          <a className="email-link" href="mailto:andrewndhlovu55@gmail.com">
             Email me.
           </a>
         </BodyText>
@@ -95,7 +64,6 @@ const SecondPage = () => {
               demoLink={projectsArray()[index].demoLink}
               disabled={projectsArray()[index].demoDisabled}
               codeDisabled={projectsArray()[index].codeDisabled}
-              ref={el => (cards.current[index] = el)}
             />
           ))}
         </section>
@@ -104,4 +72,4 @@ const SecondPage = () => {
   )
 }
 
-export default SecondPage
+export default Portfolio

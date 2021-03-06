@@ -1,13 +1,11 @@
 // @flow
 import React from "react"
 import Layout from "../components/layout"
-import { graphql, useStaticQuery } from "gatsby"
 import {
-  ImageBackground,
   MainDiv,
-  Header,
   BodyText,
   ListItem,
+  Heading,
 } from "../components/MyStyledComonents"
 import { css } from "@emotion/react"
 import SEO from "../components/seo"
@@ -30,25 +28,6 @@ const DownloadLinkStyling = css`
 `
 
 const About = () => {
-  const { background } = useStaticQuery(graphql`
-    query {
-      background: file(relativePath: { eq: "about-bg.jpg" }) {
-        childImageSharp {
-          fluid(quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `)
-
-  // Overlay Background Image with Gradient
-  const BackgroundImages = [
-    background.childImageSharp.fluid,
-    `linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.7) 100%)`,
-    `linear-gradient(187deg, rgba(104,182,239,1) 0%, rgba(108,141,250,0.6) 67%, rgba(97,244,222,1) 100%)`,
-  ].reverse()
-
   return (
     <Layout>
       <SEO title="About Me" />
@@ -61,13 +40,10 @@ const About = () => {
             grid-template-columns: repeat(auto-fill, minmax(320px, 47%));
             grid-column-gap: 6%;
           }
-          .column h1 {
-            margin: 2rem 0 4rem 0;
-          }
         `}
       >
         <section className="column">
-          <Header>About Me</Header>
+          <Heading>About Me</Heading>
           <AboutText>
             I'm a Software & full-stack web developer and UI/UX javascript
             specialist based in Lusaka, Zambia. With experience working with

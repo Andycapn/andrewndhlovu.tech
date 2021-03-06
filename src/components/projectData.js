@@ -50,6 +50,15 @@ export const projectsArray = () => {
       demoLink: "https://mychows.com",
     },
     {
+      id: 7,
+      title: "Teriyaki Chicken Bowl",
+      desc:
+        "Wordpress site build for Teriyaki Chicken Bowl, A restaurant in Albuquerque, New Mexico",
+      img: Image().teriyaki,
+      codeDisabled: true,
+      demoLink: "https://teriyakichickenbowl.com/",
+    },
+    {
       id: 5,
       title: "JavaScript Game",
       desc:

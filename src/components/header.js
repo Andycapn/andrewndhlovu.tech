@@ -1,11 +1,10 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React, { useState } from "react"
 import { css } from "@emotion/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const [state, setState] = useState({
     drawerOpen: false,
   })
@@ -200,6 +199,7 @@ const Header = ({ siteTitle }) => {
       <div
         className={`backdrop ${state.drawerOpen ? "open" : ""}`}
         onClick={handleBackdropClick}
+        role="navigation"
       />
     </header>
   )

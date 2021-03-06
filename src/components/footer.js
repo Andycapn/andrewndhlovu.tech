@@ -1,6 +1,5 @@
 import React from "react"
 import { css } from "@emotion/react"
-import Icons from "./icons"
 import { ExternalLink, FooterText, FooterTag } from "./MyStyledComonents"
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -45,11 +44,11 @@ const Footer = () => {
         <li style={{ display: "flex", alignItems: "center" }}>
           <FontAwesomeIcon size="lg" icon={faEnvelope} color="black" />
           <ExternalLink
-            href="mailto:andrew@andrewndhlovu.tech"
+            href="andrewndhlovu55@gmail.com"
             target="_blank"
             rel="noreferrer"
           >
-            andrew@andrewndhlovu.tech
+            andrewndhlovu55@gmail.com
           </ExternalLink>
         </li>
       </ul>
