@@ -56,9 +56,14 @@ const About = () => {
       <MainDiv
         css={css`
           min-height: 100vh;
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(46%, 47%));
-          grid-column-gap: 6%;
+          @media screen and (min-width: 768px) {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 47%));
+            grid-column-gap: 6%;
+          }
+          .column h1 {
+            margin: 2rem 0 4rem 0;
+          }
         `}
       >
         <section className="column">
