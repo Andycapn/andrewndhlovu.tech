@@ -106,7 +106,7 @@ const IndexPage = () => {
         </div>
         <div className="column">
           <Header className={"header"} ref={el => (heading1 = el)}>
-            Hey, My Name is Andrew.
+            Hi, My Name is Andrew.
           </Header>
           <BodyText className="body-text" ref={el => (body1 = el)}>
             I build interesting and innovative online experiences. Click below
@@ -114,7 +114,7 @@ const IndexPage = () => {
             <div className="btn-container">
               <Button to="/portfolio" css={buttonStyling}>
                 <span>
-                  View Portfolio{" "}
+                  View Portfolio
                   <FontAwesomeIcon
                     icon={faArrowRight}
                     style={{ margin: "0 5px" }}
