@@ -5,6 +5,8 @@ import Header from "./header"
 import "./layout.css"
 import CSSPlugin from "gsap"
 import { Helmet } from "react-helmet"
+import { config } from "@fortawesome/fontawesome-svg-core"
+config.autoAddCss = false
 
 const cssPlugin = CSSPlugin
 

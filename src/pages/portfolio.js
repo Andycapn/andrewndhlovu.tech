@@ -14,7 +14,6 @@ const Portfolio = () => {
       <MainDiv
         css={css`
           min-height: 100vh;
-
           .heading {
             text-align: center;
             margin-top: 2rem;
